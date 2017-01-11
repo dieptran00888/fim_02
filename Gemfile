@@ -13,6 +13,11 @@ gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "rake", "< 11.0"
+gem "cancancan", "~> 1.10"
+gem "paranoia", "~> 2.2.0.pre"
+gem "will_paginate", "3.1.0"
+gem "bootstrap-will_paginate", "0.0.10"
+gem "config"
 
 group :development, :test do
   gem "sqlite3"
