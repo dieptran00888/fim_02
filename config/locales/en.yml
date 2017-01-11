@@ -42,3 +42,5 @@ en:
     about:
       title: "About"
       content: "About Page"
+    config:
+      devise: "please-change-me-at-config-initializers-devise@example.com"
