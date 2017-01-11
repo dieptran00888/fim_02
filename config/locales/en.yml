@@ -20,4 +20,25 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    header:
+      logo: "Framgia IMusic" 
+      link_home: "Home"
+      link_login: "Login"
+      link_signup: "Sign up"
+      link_logout: "Logout"
+    footer:
+      name: "Framgia IMusic"     
+      link_about: "About"
+      link_contact: "Contact"
+  base_title: "Framgia IMusic" 
+  static_pages:
+    home:
+      title: "Home"
+      content: "Home Page"
+    contact:
+      title: "Contact"
+      content: "Contact Page"
+    about:
+      title: "About"
+      content: "About Page"
