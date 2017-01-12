@@ -65,3 +65,36 @@ en:
           flash_error: "Delete fail"
     application:
       flash_error: "Record not found"
+    categories:
+      search_form:
+        placeholder: "Search name..."
+        search: "Search"
+      new:
+        title: "Create category"
+        heading: "Add New Category"
+        submit: "Submit"
+      edit:
+        title: "Edit Category"
+        heading: "Edit Category"
+      index:
+        title: "Manage category"
+        heading: "Manage Category"
+        stt: "STT"
+        name: "Name"
+        parent_category: "Parent Category"
+        add: "Add category"
+        option: "Option"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure ?"
+      category_form:
+        blank: "---None---"
+        submit: "Save"
+  flash:
+    destroy_success: "Deleted successfully"
+    destroy_failed: "Delete failed"
+    create_success: "Created successfully"
+    create_failed: "Create failed"
+    update_success: "Updated successfully"
+    update_failed: "Update failed"
+    category_not_found: "Category not found"
