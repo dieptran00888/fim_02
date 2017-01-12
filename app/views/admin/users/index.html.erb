@@ -1,0 +1,22 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".heading" %></h1>
+<table class="table table-hover">
+  <tr>
+    <th><%= t ".name" %></th>
+    <th><%= t ".email" %></th>
+    <th><%= t ".action" %></th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td> <%= user.name %> </td>
+      <td> <%= user.email %> </td>
+      <td>
+        <%= link_to t(".delete"), admin_user_path(user),
+          class: "btn btn-danger", method: :delete,
+          data: {confirm: t(".confirm")} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @users %>
