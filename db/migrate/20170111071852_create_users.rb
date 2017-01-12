@@ -4,6 +4,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :name
       t.boolean :is_admin, default: false
       t.datetime :deleted_at
+      t.string :provider
+      t.string :uid
 
       t.timestamps
     end

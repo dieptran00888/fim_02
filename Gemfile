@@ -20,6 +20,8 @@ gem "bootstrap-will_paginate", "0.0.10"
 gem "config"
 gem "bootstrap-datepicker-rails", ">= 0.6.21"
 gem "ransack"
+gem "omniauth"
+gem "omniauth-facebook"
 
 group :development, :test do
   gem "sqlite3"
