@@ -56,7 +56,16 @@ en:
         action: "Action"
         delete: "Delete"
         confirm: "Are you sure ?"
-
+      search_form:
+        search: "Search :"
+        placeholder: "Search name or email..."
+  users:
+    show:
+      heading: "Your Profile"
+      user-info: "Personal Information"
+      edit-profile: "Edit Profile"
+      change-password: "Change Password"
+      activity: "Activity"
   controllers:
     admin:
       users:
