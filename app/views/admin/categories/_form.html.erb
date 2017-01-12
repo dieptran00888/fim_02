@@ -1,0 +1,14 @@
+<%= form_for [:admin, @category] do |f| %>
+  <%= f.hidden_field :parent_id %>
+
+  <div class="input-field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <% if @category.new_record? %>
+    <%= f.submit t(".button_create"), class: "btn btn-primary" %>
+  <% else %>
+    <%= f.submit t(".button_update"), class: "btn btn-primary" %>
+  <% end %>
+<% end %>
