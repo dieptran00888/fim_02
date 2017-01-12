@@ -9,7 +9,8 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :albums
   
-  devise :database_authenticatable, :registerable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :rememberable, :validatable,
+    :omniauthable, omniauth_providers: [:facebook]
 
   validates :name, presence: true, length: {maximum: 50}
 
@@ -19,4 +20,23 @@ class User < ApplicationRecord
     :password, :password_confirmation]
 
   scope :all_customer, ->{where is_admin: false}
+
+  class << self
+    def from_omniauth auth
+      User.find_or_create_by email: auth.info.email do |user|
+        user.email = auth.info.email
+        user.name = auth.info.name
+        user.password = Devise.friendly_token[0, 20]
+      end
+    end
+
+    def new_with_session params, session
+      super.tap do |user|
+        if data = session["devise.auth_data"] &&
+          session["devise.auth_data"]["extra"]["raw_info"]
+          user.email = data["email"]
+        end
+      end
+    end
+  end
 end
