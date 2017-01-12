@@ -1,0 +1,30 @@
+<h1><%= t ".heading" %></h1>
+<%= render "search_form" %>
+<%= link_to t(".add"), new_admin_artist_path,
+  class: "btn btn-success" %>
+<table class="table table-hover">
+  <tr>
+    <th><%= t ".artist_id" %></th>
+    <th><%= t ".name" %></th>
+    <th><%= t ".date_of_birth" %></th>
+    <th><%= t ".type_of_music" %></th>
+    <th><%= t ".action" %></th>
+  </tr>
+  <% @artists.each_with_index do |artist, index| %>
+    <tr>
+      <td><%= @artists.offset + index + 1 %></td>
+      <td><%= artist.name %></td>
+      <td><%= artist.date_of_birth %></td>
+      <td><%= artist.type_of_music.capitalize %></td>
+      <td>
+        <%= link_to t(".delete_action"), admin_artist_path(artist.id),
+          method: :delete, class: "label label-danger",
+          data: {confirm: t(".confirm")} %>
+        <%= link_to t(".edit_button"),
+          edit_admin_artist_url(artist.id), class:"label label-danger" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @artists %>

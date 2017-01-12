@@ -20,6 +20,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    attributes:
+      artist:
+        artist_types:
+          singer: "Singer"
+          composer: "Composer"
+        type_of_musics:
+          pop: "Pop"
+          jazz: "Jazz"
+          rap: "Rap"
+          rock: "Rock"
+          another: "Another"
+          balad: "Balad"
   layouts:
     header:
       logo: "Framgia IMusic" 
@@ -32,6 +45,10 @@ en:
       link_about: "About"
       link_contact: "Contact"
   base_title: "Framgia IMusic" 
+  shared:
+    error_messages:
+      content: "The form contains "
+      error: "error"
   static_pages:
     home:
       title: "Home"
@@ -94,6 +111,40 @@ en:
         action: "Action"
         delete: "Delete"
         confirm: "Are you sure ?"
+      search_form:
+        search: "Search :"
+        placeholder: "Search name or email..."
+    artists:
+      index:
+        heading: "Manage Artists"
+        artist_id: "STT"
+        name: "Name"
+        gender: "Gender"
+        date_of_birth: "Date of Birth"
+        type_of_music: "Type of Music"
+        action: "Action"
+        submit: "Submit"
+        delete_action: "Delete"
+        confirm: "Are you sure?"
+        edit_button: "Edit" 
+        add: "New Artist"
+      new:
+        heading: "Add New Artist"
+      form_artist:
+        submit: "Submit"
+      edit:
+        heading: "Edit Artist"
+      search_form:
+        search: "Search :"
+        placeholder: "Search name..."
+  flash:
+    artists_destroy_success: "Deleted successfully"
+    artists_destroy_failed: "Delete failed"
+    artists_create_success: "Created successfully"
+    artists_create_failed: "Create failed"
+    artists_update_success: "Updated successfully"
+    artists_update_failed: "Update failed"
+    artist_not_found: "This artist does not exist"    
   users:
     show:
       heading: "Your Profile"

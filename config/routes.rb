@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :categories, except: :show
     get "categories/new/(:parent_id)", to: "categories#new",
       as: "new_sub_category"
+    resources :artists, except: :show
   end
   resources :users, only: :show
 end

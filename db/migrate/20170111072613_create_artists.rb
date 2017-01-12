@@ -5,6 +5,8 @@ class CreateArtists < ActiveRecord::Migration[5.0]
       t.string :avatar
       t.date :date_of_birth
       t.integer :type_of_music
+      t.integer :artist_type
+      t.datetime :deleted_at
 
       t.timestamps
     end
