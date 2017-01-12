@@ -18,6 +18,8 @@ gem "paranoia", "~> 2.2.0.pre"
 gem "will_paginate", "3.1.0"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "config"
+gem "bootstrap-datepicker-rails", ">= 0.6.21"
+gem "ransack"
 
 group :development, :test do
   gem "sqlite3"

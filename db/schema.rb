@@ -124,8 +124,6 @@ ActiveRecord::Schema.define(version: 20170111151328) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.integer  "gender"
-    t.date     "date_of_birth"
     t.boolean  "is_admin",               default: false
     t.datetime "deleted_at"
     t.datetime "created_at",                             null: false
