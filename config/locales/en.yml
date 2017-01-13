@@ -44,7 +44,45 @@ en:
       content: "About Page"
     config:
       devise: "please-change-me-at-config-initializers-devise@example.com"
+  controllers:
+    admin:
+      users:
+        destroy:
+          flash_success: "Delete success"
+          flash_error: "Delete fail"
+    application:
+      flash_error: "Record not found"
+  flash:
+    destroy_success: "Deleted successfully"
+    destroy_failed: "Delete failed"
+    create_success: "Created successfully"
+    create_failed: "Create failed"
+    update_success: "Updated successfully"
+    update_failed: "Update failed"
+    category_not_found: "Category not found"
+    
   admin:
+    categories:
+      new:
+       title: "Create category"
+       heading: "Add New Category"
+      edit:
+       title: "Edit Category"
+       heading: "Edit Category"
+      index:
+       title: "Manage category"
+       heading: "Manage Category"
+       name: "Name"
+       add: "Add category"
+       edit: "Edit"
+       delete: "Delete"
+      form:
+       button_update: "Update"
+       button_create: "Create"
+      category:
+       new_sub_category: "Add"
+       delete_category: "Delete"
+       confirm_delete: "This action will be deleted all sub category. You sure?"
     users:
       index:
         title: "Manage users"
@@ -52,13 +90,10 @@ en:
         name: "Name"
         gender: "Gender"
         date_of_birth: "Date of birth"
-        email: email
+        email: "Email"
         action: "Action"
         delete: "Delete"
         confirm: "Are you sure ?"
-      search_form:
-        search: "Search :"
-        placeholder: "Search name or email..."
   users:
     show:
       heading: "Your Profile"

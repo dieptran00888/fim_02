@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111151328) do
+ActiveRecord::Schema.define(version: 20170112094154) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -69,6 +69,14 @@ ActiveRecord::Schema.define(version: 20170111151328) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "category_hierarchies", id: false, force: :cascade do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+    t.index ["ancestor_id", "descendant_id", "generations"], name: "category_anc_desc_idx", unique: true
+    t.index ["descendant_id"], name: "category_desc_idx"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
     t.integer  "user_id"
@@ -124,6 +132,8 @@ ActiveRecord::Schema.define(version: 20170111151328) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
+    t.integer  "gender"
+    t.date     "date_of_birth"
     t.boolean  "is_admin",               default: false
     t.datetime "deleted_at"
     t.string   "provider"
@@ -140,7 +150,6 @@ ActiveRecord::Schema.define(version: 20170111151328) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

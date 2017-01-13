@@ -1,0 +1,5 @@
+<%= link_to t(".add"), new_admin_category_path, class: "new-category" %>
+<br>
+<% if @categories.any? %>
+  <%= category_hierarchy @categories %>
+<% end %>
