@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170112094154) do
     t.string   "name"
     t.integer  "views"
     t.float    "avg_rates"
-    t.string   "album_type"
+    t.integer  "album_type"
     t.integer  "avatar"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
@@ -122,12 +122,13 @@ ActiveRecord::Schema.define(version: 20170112094154) do
     t.string   "name"
     t.integer  "artist_id"
     t.integer  "album_id"
-    t.string   "album_type"
     t.integer  "category_id"
     t.integer  "views_count"
     t.float    "avg_rates"
     t.boolean  "is_pin"
     t.string   "url_content"
+    t.integer  "composer_id"
+    t.integer  "singer_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

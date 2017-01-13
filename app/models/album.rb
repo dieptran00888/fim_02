@@ -10,5 +10,18 @@ class Album < ApplicationRecord
   belongs_to :category
   belongs_to :user
 
-  accepts_nested_attributes_for :songs
+  accepts_nested_attributes_for :songs, allow_destroy: true,
+    reject_if: :all_blank
+
+  enum album_type: [:album, :favorite]
+
+  validates :name, presence: true, length: {maximum: 255}
+  validate :at_least_one_song
+
+  private
+  def at_least_one_song
+    if self.songs.size < 1
+      errors.add :base, I18n.t("flash.at_least_one_song")
+    end
+  end
 end
