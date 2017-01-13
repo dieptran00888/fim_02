@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20170112094154) do
     t.string   "avatar"
     t.date     "date_of_birth"
     t.integer  "type_of_music"
+    t.integer  "artist_type"
+    t.datetime "deleted_at"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -132,8 +134,6 @@ ActiveRecord::Schema.define(version: 20170112094154) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.integer  "gender"
-    t.date     "date_of_birth"
     t.boolean  "is_admin",               default: false
     t.datetime "deleted_at"
     t.string   "provider"
@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20170112094154) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
