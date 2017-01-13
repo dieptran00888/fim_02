@@ -17,7 +17,7 @@
 //= require bootstrap-datepicker
 //= require bootstrap
 //= require mediaelement_rails
-
+//= require adminlte
 $(document).on('turbolinks:load', function () {
   $current = 1;
   $('#audio-player').on('ended', function () {

@@ -44,6 +44,19 @@ en:
       name: "Framgia IMusic"     
       link_about: "About"
       link_contact: "Contact"
+    admin:
+      header:
+        link_profile: "Profile"
+        link_logout: "Logout"
+        user_image: "User Image"
+        logo: "IMusik"
+      sidebar:
+        link_albums: "Albums"
+        link_users: "Users"
+        link_categories: "Categories"
+        link_artists: "Artists"
+        link_dashboard: "Dashboard"
+        online: "Online"
   base_title: "Framgia IMusic" 
   shared:
     error_messages:
