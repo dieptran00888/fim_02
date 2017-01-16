@@ -20,3 +20,10 @@
     </div>
   </div>
 </div>
+
+<%= render "comments/form", parent_id: nil %>
+<ul>
+  <% if @support.comments %>
+    <%= comments_tree_for @support.comments %>
+  <% end %>
+</ul>

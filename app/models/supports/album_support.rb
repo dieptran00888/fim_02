@@ -1,7 +1,8 @@
 class Supports::AlbumSupport
   attr_reader :album
 
-  def initialize params = {}
+  def initialize album
+    @album = album
   end
 
   def singers
@@ -14,5 +15,9 @@ class Supports::AlbumSupport
 
   def categories
     @categories ||= Category.pluck(:name, :id).to_h
+  end
+
+  def comments
+    @comments = @album.comments.hash_tree
   end
 end
