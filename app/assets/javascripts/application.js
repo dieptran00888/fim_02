@@ -17,3 +17,17 @@
 //= require bootstrap-datepicker
 //= require bootstrap
 //= require mediaelement_rails
+
+$(document).on('turbolinks:load', function () {
+  $current = 1;
+  $('#audio-player').on('ended', function () {
+    $source='';
+    $('#audio-player').attr('src', nextSource());
+  });
+});
+
+function nextSource() {
+  var src = $('.list-group').children().children().eq($current).attr('data');
+  $current++;
+  return src;
+}

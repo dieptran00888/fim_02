@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :songs, only: :show
+  resources :albums, only: :show
 end
