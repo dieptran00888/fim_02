@@ -1,8 +1,7 @@
 class AlbumsController < ApplicationController
   load_resource only: :show
-
-  def show
   load_and_authorize_resource only: [:new, :create]
+
   before_action :set_attributes, only: :create
 
   def new
@@ -18,6 +17,9 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def show
+  end
+  
   private
   def album_params
     params.require(:album).permit :name, :album_type, :user_id
