@@ -1,0 +1,18 @@
+<li>
+  <small>
+    <p><%= comment.user.name %></p>
+    <%= time_ago_in_words(comment.created_at) + t(".ago") %>
+  </small>
+  <blockquote>
+    <p><%= comment.content %></p>
+  </blockquote>
+  <% if comment.root? %>
+    <p>
+      <%= link_to t(".reply"), song_new_comment_path(song_id: @commentable.id,
+        parent_id: comment.id), class: "button-reply", remote: true %>
+    </p>
+    <div class="reply">
+      <%= render "comments/form", parent_id: comment.id %>
+    </div>
+  <% end %>
+</li>
