@@ -26,6 +26,8 @@ gem "omniauth-facebook"
 gem "kaminari"
 gem "closure_tree"
 gem "mediaelement_rails"
+gem "rails-assets-adminlte"
+gem "font-awesome-sass"
 
 group :development, :test do
   gem "sqlite3"

@@ -95,6 +95,8 @@ GEM
     faraday (0.10.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.14)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashie (3.4.6)
@@ -178,6 +180,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.0.1)
       sprockets-rails (>= 2.0.0)
+    rails-assets-adminlte (2.3.5)
     rails-dom-testing (2.0.2)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6)
@@ -281,6 +284,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  font-awesome-sass
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
@@ -292,6 +296,7 @@ DEPENDENCIES
   pg
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rails-assets-adminlte
   rake (< 11.0)
   ransack
   rspec-rails (~> 3.0.0)

@@ -9,8 +9,13 @@ Rails.application.routes.draw do
       as: "new_sub_category"
     resources :artists, except: :show
     resources :albums, except: :show
+    resources :dashboard, only: :index
   end
-  resources :users, only: :show
+  resources :users, only: :show do
+    member do
+      resources :albums, only: [:new, :create]
+    end
+  end
   resources :songs, only: :show
   resources :albums, only: :show
 end
