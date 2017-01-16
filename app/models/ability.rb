@@ -5,6 +5,8 @@ class Ability
     user ||= User.new
     if user.is_admin?
       can :manage, [User, Category, Artist, Album]
+     else
+      can :manage, Album
     end
   end
 end

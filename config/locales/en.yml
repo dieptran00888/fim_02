@@ -156,6 +156,12 @@ en:
       search_form:
         search: "Search :"
         placeholder: "Search name..."
+    albums:
+      new:
+        heading: "New Favorite List"
+        album_name: "Playlist's name"
+        submit: "Create New Favorite"
+        album_name: "Album's name"
   flash:
     artists_destroy_success: "Deleted successfully"
     artists_destroy_failed: "Delete failed"
