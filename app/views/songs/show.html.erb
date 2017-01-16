@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-4">
+    <h3><%= @song.name %></h3>
+  </div>
+  <div class="col-md-8">
+    <div class="audio-player">
+      <img class="cover" src="" alt="">
+      <audio id="audio-player" src="<%= @song.url_content %>"
+        type="audio/mp3" controls="controls"></audio>
+    </div>
+  </div>
+</div>

@@ -25,6 +25,7 @@ gem "omniauth"
 gem "omniauth-facebook"
 gem "kaminari"
 gem "closure_tree"
+gem "mediaelement_rails"
 
 group :development, :test do
   gem "sqlite3"

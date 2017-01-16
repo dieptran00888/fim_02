@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :albums, except: :show
   end
   resources :users, only: :show
+  resources :songs, only: :show
 end
