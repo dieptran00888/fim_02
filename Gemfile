@@ -29,6 +29,7 @@ gem "closure_tree"
 gem "mediaelement_rails"
 gem "rails-assets-adminlte"
 gem "font-awesome-sass"
+gem "ratyrate"
 
 group :development, :test do
   gem "sqlite3"
