@@ -1,0 +1,30 @@
+<fieldset>
+  <div class="form-group">
+    <%= f.label :name, t(".song_name") %><br/>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :url_content, t(".url_content") %><br/>
+    <%= f.text_field :url_content, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :singer_id, t(".singer") %><br/>
+    <%= f.select :singer_id,
+      options_for_select(@support.singers),
+      autofocus: true, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :composer %><br/>
+    <%= f.select :composer_id,
+      options_for_select(@support.composers),
+      class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category_id %><br/>
+    <%= f.select :category_id,
+      options_for_select(@support.categories),
+      class: "form-control" %>
+  </div>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to t(".remove"), "#", class: "remove_fields" %>
+</fieldset>

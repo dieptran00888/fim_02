@@ -4,7 +4,7 @@ class Ability
   def initialize user
     user ||= User.new
     if user.is_admin?
-      can :manage, [User, Category, Artist]
+      can :manage, [User, Category, Artist, Album]
     end
   end
 end

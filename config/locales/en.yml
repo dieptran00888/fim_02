@@ -69,16 +69,22 @@ en:
           flash_error: "Delete fail"
     application:
       flash_error: "Record not found"
-  flash:
-    destroy_success: "Deleted successfully"
-    destroy_failed: "Delete failed"
-    create_success: "Created successfully"
-    create_failed: "Create failed"
-    update_success: "Updated successfully"
-    update_failed: "Update failed"
-    category_not_found: "Category not found"
-    
+
   admin:
+    albums:
+      new:
+        heading: "Add New Album"
+        submit: "Submit"
+        create_new: "Create new one"
+        song_name: "Song's name"
+        album_name: "Album's name"
+        add_fields: "Add Fields"
+        singer: "Singer"
+      song_fields:
+        remove: "Remove"
+        song_name: "Song Name"
+        url_content: "Url Content"
+        singer: "Singer"
     categories:
       new:
        title: "Create category"
@@ -144,7 +150,16 @@ en:
     artists_create_failed: "Create failed"
     artists_update_success: "Updated successfully"
     artists_update_failed: "Update failed"
-    artist_not_found: "This artist does not exist"    
+    artist_not_found: "This artist does not exist"
+    destroy_success: "Deleted successfully"
+    destroy_failed: "Delete failed"
+    create_success: "Created successfully"
+    create_failed: "Create failed"
+    update_success: "Updated successfully"
+    update_failed: "Update failed"
+    category_not_found: "Category not found"
+    at_least_one_song: "An album must have at least one song"
+
   users:
     show:
       heading: "Your Profile"
@@ -152,11 +167,3 @@ en:
       edit-profile: "Edit Profile"
       change-password: "Change Password"
       activity: "Activity"
-  controllers:
-    admin:
-      users:
-        destroy:
-          flash_success: "Delete success"
-          flash_error: "Delete fail"
-    application:
-      flash_error: "Record not found"
