@@ -30,6 +30,7 @@ gem "mediaelement_rails"
 gem "rails-assets-adminlte"
 gem "font-awesome-sass"
 gem "ratyrate"
+gem "ckeditor"
 
 group :development, :test do
   gem "sqlite3"

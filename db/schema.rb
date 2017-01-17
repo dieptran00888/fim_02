@@ -156,6 +156,16 @@ ActiveRecord::Schema.define(version: 20170116151651) do
     t.index ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "rates"
+    t.integer  "ratable_id"
+    t.string   "ratable_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["ratable_type", "ratable_id"], name: "index_ratings_on_ratable_type_and_ratable_id"
+  end
+
   create_table "songs", force: :cascade do |t|
     t.string   "name"
     t.integer  "artist_id"

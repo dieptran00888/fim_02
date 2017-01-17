@@ -10,6 +10,12 @@
     </div>
   </div>
 </div>
+
+<h3><%= t ".lyrics" %></h3>
+<div class="contribute-lyric">
+  <%= link_to t(".lyric-contribute"), new_song_lyric_path(@song),
+    class: "button-contribute" %>
+</div>
 <%= render "comments/form", parent_id: nil %>
 <ul>
   <% if @support.comments %>
