@@ -18,6 +18,8 @@
 //= require bootstrap
 //= require mediaelement_rails
 //= require adminlte
+//= require jquery.raty
+//= require ratyrate
 
 $(document).on('turbolinks:load', function () {
   $current = 1;

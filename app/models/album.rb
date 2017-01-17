@@ -1,7 +1,8 @@
 class Album < ApplicationRecord
   has_many :album_songs, dependent: :destroy
   has_many :songs, through: :album_songs
-  has_many :ratings, as: :ratable, dependent: :destroy
+  has_many :ratings, as: :rateable, class_name: Rate.name,
+    dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :favourites, as: :favouritable, dependent: :destroy
   has_many :album_artists, dependent: :destroy
@@ -17,6 +18,8 @@ class Album < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: 255}
   validate :at_least_one_song
+
+  ratyrate_rateable "evaluation"
 
   private
   def at_least_one_song

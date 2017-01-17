@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  ratyrate_rater
   acts_as_paranoid
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :ratings, as: :ratable, dependent: :destroy
