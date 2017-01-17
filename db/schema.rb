@@ -88,6 +88,14 @@ ActiveRecord::Schema.define(version: 20170116113822) do
     t.index ["descendant_id"], name: "category_desc_idx"
   end
 
+  create_table "comment_hierarchies", id: false, force: :cascade do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+    t.index ["ancestor_id", "descendant_id", "generations"], name: "comment_anc_desc_idx", unique: true
+    t.index ["descendant_id"], name: "comment_desc_idx"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
     t.integer  "user_id"

@@ -186,3 +186,14 @@ en:
       edit-profile: "Edit Profile"
       change-password: "Change Password"
       activity: "Activity"
+  comments:
+    form:
+      comment: "Comment"
+      comment_placeholder: "Add a comment"
+    new:
+      new_comment: "New comment"
+    comment:
+      submitted: "Submitted "
+      reply: "Reply"
+      ago: " ago"
+      send: "Send"

@@ -25,6 +25,11 @@ $(document).on('turbolinks:load', function () {
     $source='';
     $('#audio-player').attr('src', nextSource());
   });
+
+  $('.reply').hide();
+  $('.button-reply').on('click', function () {
+    $(this).parent().next().show();
+  })
 });
 
 function nextSource() {
