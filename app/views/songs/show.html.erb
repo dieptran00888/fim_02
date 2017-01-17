@@ -7,10 +7,11 @@
       <img class="cover" src="" alt="">
       <audio id="audio-player" src="<%= @song.url_content %>"
         type="audio/mp3" controls="controls"></audio>
+        <%= t ".views" %>
+        <%= @song.impressionist_count %><br/>
     </div>
   </div>
 </div>
-
 <h3><%= t ".lyrics" %></h3>
 <div class="contribute-lyric">
   <%= link_to t(".lyric-contribute"), new_song_lyric_path(@song),

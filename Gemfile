@@ -31,6 +31,7 @@ gem "rails-assets-adminlte"
 gem "font-awesome-sass"
 gem "ratyrate"
 gem "ckeditor"
+gem "impressionist"
 
 group :development, :test do
   gem "sqlite3"
