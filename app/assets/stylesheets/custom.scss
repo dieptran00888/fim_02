@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 $gray-medium-light: #eaeaea;
 
@@ -10,7 +12,6 @@ $gray-medium-light: #eaeaea;
 }
 
 body {
-  padding-top: 60px;
 }
 
 section {
@@ -106,4 +107,8 @@ footer {
 
 audio{
   width: 100%;
+}
+
+.fa.favorited {
+  color: red;
 }
