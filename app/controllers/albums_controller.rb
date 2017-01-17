@@ -3,6 +3,7 @@ class AlbumsController < ApplicationController
   load_and_authorize_resource only: [:new, :create]
 
   before_action :set_attributes, only: :create
+  before_action :album_support, only: :show
 
   def new
   end
@@ -18,6 +19,8 @@ class AlbumsController < ApplicationController
   end
 
   def show
+    @commentable = @album
+    @comment = current_user.comments.new
   end
   
   private
@@ -28,5 +31,9 @@ class AlbumsController < ApplicationController
   def set_attributes
     @album.album_type = "favorite"
     @album.user = current_user
+  end
+
+  def album_support
+    @support = Supports::AlbumSupport.new @album
   end
 end
