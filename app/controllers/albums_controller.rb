@@ -28,11 +28,6 @@ class AlbumsController < ApplicationController
     params.require(:album).permit :name, :album_type, :user_id
   end
 
-  def set_attributes
-    @album.album_type = "favorite"
-    @album.user = current_user
-  end
-
   def album_support
     @support = Supports::AlbumSupport.new @album
   end

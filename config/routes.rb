@@ -26,4 +26,5 @@ Rails.application.routes.draw do
     resources :comments
     get "/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
   end
+  resources :marks, only: [:new, :create, :update]
 end

@@ -209,3 +209,10 @@ en:
   lyrics:
     form:
       send: "Send"
+  marks:
+    update:
+      not_found: "Not Found"
+    create:
+      error: "Error"
+    unfavorite: "Unfavorite"
+    fravorite: "Favorite"

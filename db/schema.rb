@@ -107,14 +107,6 @@ ActiveRecord::Schema.define(version: 20170116151651) do
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
   end
 
-  create_table "favourites", force: :cascade do |t|
-    t.integer  "favouritable_id"
-    t.integer  "favouritable_type"
-    t.integer  "user_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
   create_table "lyrics", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "song_id"
@@ -123,6 +115,16 @@ ActiveRecord::Schema.define(version: 20170116151651) do
     t.boolean  "is_approve"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "marks", force: :cascade do |t|
+    t.boolean  "is_favorite", default: false
+    t.integer  "user_id"
+    t.integer  "song_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["song_id"], name: "index_marks_on_song_id"
+    t.index ["user_id"], name: "index_marks_on_user_id"
   end
 
   create_table "overall_averages", force: :cascade do |t|
@@ -154,16 +156,6 @@ ActiveRecord::Schema.define(version: 20170116151651) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
-  end
-
-  create_table "ratings", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "rates"
-    t.integer  "ratable_id"
-    t.string   "ratable_type"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["ratable_type", "ratable_id"], name: "index_ratings_on_ratable_type_and_ratable_id"
   end
 
   create_table "songs", force: :cascade do |t|
