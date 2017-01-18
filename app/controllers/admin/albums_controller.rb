@@ -40,7 +40,7 @@ class Admin::AlbumsController < ApplicationController
 
   private
   def album_params
-    params.require(:album).permit :name,
+    params.require(:album).permit :name, :avatar,
       songs_attributes: [:id, :name, :url_content, :singer_id, :composer_id,
         :category_id, :_destroy]
   end

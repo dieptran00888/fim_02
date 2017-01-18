@@ -33,6 +33,7 @@ gem "ratyrate"
 gem "ckeditor"
 gem "impressionist"
 gem "chosen-rails"
+gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   gem "sqlite3"

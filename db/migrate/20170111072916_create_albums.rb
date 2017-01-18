@@ -6,7 +6,7 @@ class CreateAlbums < ActiveRecord::Migration[5.0]
       t.integer :views, default: 0
       t.float :avg_rates
       t.integer :album_type
-      t.integer :avatar
+      t.attachment :avatar
       t.integer :category_id
 
       t.timestamps

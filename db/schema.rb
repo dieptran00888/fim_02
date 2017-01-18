@@ -37,13 +37,16 @@ ActiveRecord::Schema.define(version: 20170117174135) do
   create_table "albums", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.integer  "views",       default: 0
+    t.integer  "views",               default: 0
     t.float    "avg_rates"
     t.integer  "album_type"
-    t.integer  "avatar"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.integer  "category_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "artist_songs", force: :cascade do |t|
@@ -55,13 +58,16 @@ ActiveRecord::Schema.define(version: 20170117174135) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
-    t.string   "avatar"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.date     "date_of_birth"
     t.integer  "type_of_music"
     t.integer  "artist_type"
     t.datetime "deleted_at"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "average_caches", force: :cascade do |t|
