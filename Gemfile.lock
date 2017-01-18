@@ -62,6 +62,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chosen-rails (1.5.2)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     ckeditor (4.2.2)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -288,6 +292,7 @@ DEPENDENCIES
   byebug
   cancancan (~> 1.10)
   capybara
+  chosen-rails
   ckeditor
   closure_tree
   coffee-rails (~> 4.2)

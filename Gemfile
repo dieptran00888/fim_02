@@ -32,6 +32,7 @@ gem "font-awesome-sass"
 gem "ratyrate"
 gem "ckeditor"
 gem "impressionist"
+gem "chosen-rails"
 
 group :development, :test do
   gem "sqlite3"
