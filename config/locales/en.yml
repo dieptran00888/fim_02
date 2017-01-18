@@ -167,6 +167,19 @@ en:
     songs:
       show:
         rate_this: "Rate This!"
+    lyrics:
+      index:
+        name: "Name"
+        email: "Email"
+        status: "Status"
+        lyric: "Lyric"
+        lyric_option: "Lyric Option"
+        time_pending: "Time pending"
+        song: "Song"
+        singer: "Singer"
+      lyric:
+        approve: "Approve"
+        remove: "Remove"
   flash:
     artists_destroy_success: "Deleted successfully"
     artists_destroy_failed: "Delete failed"
@@ -216,3 +229,6 @@ en:
       error: "Error"
     unfavorite: "Unfavorite"
     fravorite: "Favorite"
+  helper:
+    approved: "Approved"
+    pending: "Pending"

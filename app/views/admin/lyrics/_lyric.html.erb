@@ -1,0 +1,13 @@
+<tr>
+  <%= form_for [:admin, lyric] do |f| %>
+    <td><%= lyric.created_at %></td>
+    <td><%= lyric.user.name %></td>
+    <td><%= lyric.user.email %></td>
+    <td><%= lyric.song.name %></td>
+    <td><%= lyric.content %></td>
+    <td><%= status_field lyric %></td>
+    <td><%= f.submit t(".approve"), class: "btn btn-primary" %></td>
+    <td><%= link_to t(".remove"), admin_lyric_path(lyric),
+      method: :delete, class: "btn btn-danger" %></td>
+  <% end %>
+</tr>
