@@ -1,0 +1,18 @@
+<% if @lyrics.any? %>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th><%= t ".time_pending" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".email" %></th>
+        <th><%= t ".song" %></th>
+        <th><%= t ".lyric" %></th>
+        <th><%= t ".status" %></th>
+        <th><%= t ".lyric_option" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @lyrics %>
+    </tbody>
+  </table>
+<% end %>
