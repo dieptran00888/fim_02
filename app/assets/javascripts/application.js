@@ -20,6 +20,7 @@
 //= require adminlte
 //= require jquery.raty
 //= require ratyrate
+//= require ckeditor/init
 
 $(document).on('turbolinks:load', function () {
   $current = 1;

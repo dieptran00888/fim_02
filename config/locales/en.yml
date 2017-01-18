@@ -202,3 +202,10 @@ en:
       reply: "Reply"
       ago: " ago"
       send: "Send"
+  songs:
+    show:
+      lyrics: "Lyrics"
+      lyric-contribute: "Contribute"
+  lyrics:
+    form:
+      send: "Send"

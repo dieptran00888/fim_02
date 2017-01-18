@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :songs, only: :show do
     resources :comments
     get "/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
+    resources :lyrics, only: [:new, :create]
   end
   resources :albums, only: :show do
     resources :comments
