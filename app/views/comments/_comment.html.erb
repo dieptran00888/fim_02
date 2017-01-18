@@ -11,8 +11,12 @@
       <%= link_to t(".reply"), new_polymorphic_path([@commentable, comment],
         parent_id: comment.id), class: "button-reply", remote: true %>
     </p>
+
     <div class="reply">
       <%= render "comments/form", parent_id: comment.id %>
     </div>
   <% end %>
+  <div><%= link_to t(".delete"), polymorphic_path([@commentable, comment]),
+    method: :delete %>
+  </div>
 </li>
