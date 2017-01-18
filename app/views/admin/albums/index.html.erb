@@ -1,0 +1,14 @@
+<% if @albums.any? %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><%= t ".time_pending" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".album_option" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @albums %>
+    </tbody>
+  </table>
+<% end %>

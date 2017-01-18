@@ -1,0 +1,14 @@
+<%= form_for [:admin, @album], remote: true do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :name, t(".album_name") %><br/>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group" id="songs_field">
+    <%= f.fields_for :songs do |builder| %>
+      <%= render "song_fields", f: builder %>
+    <% end %>
+    <%= link_to_add_field t(".add_fields"), f, :songs %>
+    <%= f.submit t("submit"), class: "btn btn-primary btn-block btn-lg" %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<tr>
+  <%= form_for [:admin, album] do |f| %>
+    <td><%= album.created_at %></td>
+    <td><%= album.name %></td>
+    <td><%= link_to t(".edit"), edit_admin_album_path(album),
+      class: "btn btn-primary" %>
+    <%= link_to t(".delete"), admin_album_path(album),
+      method: :delete, class: "btn btn-danger" %></td>
+  <% end %>
+</tr>

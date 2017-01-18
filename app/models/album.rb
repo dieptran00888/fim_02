@@ -4,7 +4,6 @@ class Album < ApplicationRecord
   has_many :ratings, as: :rateable, class_name: Rate.name,
     dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
-  has_many :favourites, as: :favouritable, dependent: :destroy
   has_many :album_artists, dependent: :destroy
   has_many :artists, through: :album_artists
 
