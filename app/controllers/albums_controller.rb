@@ -21,6 +21,7 @@ class AlbumsController < ApplicationController
   def show
     @commentable = @album
     @comment = current_user.comments.new
+    impressionist @album
   end
   
   private
