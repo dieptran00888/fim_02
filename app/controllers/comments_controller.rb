@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :find_commentable, only: [:create, :new]
+  load_resource
 
   def new
     @comment = Comment.new parent_id: params[:parent_id]
@@ -13,6 +14,12 @@ class CommentsController < ApplicationController
       flash[:danger] = @comment.errors.full_messages.join("/ ")
     end
     redirect_to @commentable
+  end
+
+  def destroy
+    @comment.destroy
+    flash[:success] = t "flash.destroy_success"
+    redirect_to :back
   end
 
   private

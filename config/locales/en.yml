@@ -215,6 +215,7 @@ en:
       reply: "Reply"
       ago: " ago"
       send: "Send"
+      delete: "Delete"
   songs:
     show:
       lyrics: "Lyrics"
