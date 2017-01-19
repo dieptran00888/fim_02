@@ -3,6 +3,11 @@ class SongsController < ApplicationController
   before_action :song_support, only: :show
   load_resource :song
   
+  def index
+    @search = Song.search params[:q]
+    @songs = @search.result
+  end
+
   def show
     @commentable = @song
     @comment = current_user.comments.new

@@ -4,19 +4,25 @@
       <li class="active">
         <%= link_to admin_categories_path do %>
           <i class="glyphicon glyphicon-th-list nht-icon"></i>
-          <%= t(".link_categories") %>
+          <span><%= t".link_categories" %></span>
         <% end %>
       </li>
       <li>
         <%= link_to admin_artists_path do %>
           <i class="fa fa-book nht-icon"></i>
-          <%= t(".link_artists") %>
+          <span><%= t ".link_artists" %></span>
         <% end %>
       </li>
       <li>
         <%= link_to admin_users_path do %>
           <i class="fa fa-user nht-icon"></i>
-          <%= t(".link_users") %>
+          <span><%= t ".link_users" %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_albums_path do %>
+          <i class="fa fa-user nht-icon"></i>
+          <span><%= t ".link_users" %></span>
         <% end %>
       </li>
     </ul>

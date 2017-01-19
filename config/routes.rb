@@ -13,17 +13,18 @@ Rails.application.routes.draw do
     resources :dashboard, only: :index
     resources :lyrics, only: [:index, :update, :destroy]
   end
-  resources :users, only: :show do
+  resources :users, only: [:show, :index] do
     member do
       resources :albums, only: [:new, :create]
     end
   end
-  resources :songs, only: :show do
+  resources :artists, only: [:index, :show]
+  resources :songs, only: [:show, :index] do
     resources :comments
     get "/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
     resources :lyrics, only: [:new, :create]
   end
-  resources :albums, only: :show do
+  resources :albums, only: [:show, :index] do
     resources :comments
     get "/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
   end
