@@ -215,6 +215,7 @@ en:
       edit-profile: "Edit Profile"
       change-password: "Change Password"
       activity: "Activity"
+    title: "Users"
   comments:
     form:
       comment: "Comment"
@@ -248,3 +249,4 @@ en:
   submit: "Submit"
   no_lyric: "No Lyrics"
   lyric: "Lyric"
+  search: "Search"
