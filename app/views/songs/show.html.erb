@@ -2,21 +2,21 @@
 <div class="container song-wraper" style="background: white; box-shadow:0 0
   10px rgba(0, 0, 0, 0.5); margin-top: 65px;">
   <div class="col-md-8">
-    <div class="audio-player">
-      <img class="cover" src="" alt="">
-      <audio id="audio-player" src="<%= @song.url_content %>"
-        type="audio/mp3" controls="controls"></audio>
-        <%= t ".views" %>
-        <%= @song.impressionist_count %><br/>
-        <%= t "user.share" %>
-        <%= social_share_button_tag @song.name %>
-    <div class="col-md-4" style="margin-top: 45px">
-      <h3><%= @song.name %></h3>
-      <p>Category: <%= @song.category_id %> </p>
+    <div style="margin-top: 45px">
+      <% @singer = Artist.find(@song.singer_id) %>
+        <div class="avatar">
+          <img src="https://thumb1.shutterstock.com/display_pic_with_logo/2505571/450617644/stock-vector-cool-avatar-black-rap-singer-modern-simple-and-clear-design-vector-icon-in-flat-style-450617644.jpg" alt="">
+        </div>
+      <div class="title-song" style="float: left;padding-left: 50px;">
+        <h3><%= @song.name %></h3>
+        <p>Category: <%= @song.category.name %> </p>
+        <p>Singer: <%= @singer.name %> </p>
+      </div>
     </div>
-    <div class="panel panel-default" style="margin-top: 170px;">
-      <div class="panel-body" style="padding-top: 10px">
-        <div class="audio-player" style="width: 95%; padding-top: 10px">
+    <div class="panel panel-default" style="margin-top: 250px;">
+      <div class="panel-body" style="padding-top: 10px;
+        background-image: url('http://www.playinmusic.com/images/graphic-top-banner.jpg')">
+        <div class="audio-player" style="width: 98%; padding-top: 130px;">
           <img class="cover" src="" alt="">
           <audio id="audio-player" src="<%= @song.url_content %>"
           type="audio/mp3" controls="controls" autoplay></audio>

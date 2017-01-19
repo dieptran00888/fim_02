@@ -10,6 +10,7 @@ class Ability
       can :manage, [User]
       can :manage, [Album]
       can :create, Lyric
+      can :show, Artist
     end
     can :manage, Comment
   end

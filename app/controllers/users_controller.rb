@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource find_by: :slug
+  load_and_authorize_resource except: :show
+  before_action :find_user, only: :show
 
   def index
     @search = User.search params[:q]
@@ -8,5 +9,12 @@ class UsersController < ApplicationController
   end
 
   def show
+    @favorite_songs = @user.list_favorite_songs
+      .paginate page: params[:favorite_song_page]
+  end
+
+  private
+  def find_user
+    @user = User.friendly.find_by id: params[:id]
   end
 end

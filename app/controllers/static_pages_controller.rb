@@ -2,8 +2,9 @@ class StaticPagesController < ApplicationController
   def show
       if valid_page?
         if params[:page] == "home"
-          @songs = Song.all
           @albums = Album.all
+          @search = Song.ransack params[:q]
+          @songs = @search.result.includes :albums, :artists
         end
         render template: "static_pages/#{params[:page]}"
       else

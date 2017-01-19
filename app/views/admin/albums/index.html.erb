@@ -1,5 +1,3 @@
-<%= link_to t(".add"), new_admin_album_path,
-  class: "btn btn-success" %>
 <% if @albums.any? %>
   <table class="table table-hover">
     <%= link_to "Create Album", new_admin_album_path,

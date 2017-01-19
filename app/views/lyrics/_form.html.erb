@@ -1,6 +1,6 @@
 <%= form_for [@song, @lyric] do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.label :content %>
-  <%= f.cktext_area :content, rows: 10 %>
+  <%= f.text_area :content, rows: 10 %>
   <%= f.submit t(".send") %>
 <% end %>

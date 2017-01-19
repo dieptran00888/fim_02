@@ -1,30 +1,9 @@
-<% provide :title, t(".title_page") %>
-<h1><%= t "views.categories.dashboard" %></h1>
-
-<%= link_to t(".heading"),
-  new_admin_category_path, class: "btn btn-info" %>
-
-<table class="table table-hover">
-  <tr>
-    <th><%= t ".stt" %></th>
-    <th><%= t ".title" %></th>
-    <th><%= t ".admin_function" %></th>
-  </tr>
-  <% if @categories.any? %>
-    <td> <%= category_hierarchy @categories %> </td>
-      <% @categories.each.with_index do |category, index| %>
-        <tr>
-          <td> <%= index + 1  %> </td>
-            <span>
-              <%= link_to t("views.categories.edit_button"),
-                edit_admin_category_url(category), class:"btn btn-info" %>
-              <%= link_to t("views.categories.delete_button"),
-                admin_category_url(category), method: :delete,
-                data: {confirm: t("views.categories.delete_confirm")},
-                class:"btn btn-danger" %>
-            </span>
-          </td>
-      </tr>
+<div class="category-list">
+  <%= link_to t(".add"), new_admin_category_path, class: "btn btn-primary" %>
+  <br>
+  <div style="margin-top: 20px">
+    <% if @categories.any? %>
+      <%= category_hierarchy @categories %>
     <% end %>
-  <% end %>
-</table>
+  </div>
+</div>

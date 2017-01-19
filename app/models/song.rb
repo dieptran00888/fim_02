@@ -10,6 +10,8 @@ class Song < ApplicationRecord
   has_many :album_songs
   has_many :albums, through: :album_songs
 
+  belongs_to :category
+
   validates :name, presence: true
   validates :url_content, presence: true
   validates :composer_id, presence: true
@@ -18,4 +20,7 @@ class Song < ApplicationRecord
 
   ratyrate_rateable "evaluation"
   is_impressionable counter_cache: true, column_name: :views
+
+  scope :of_ids, -> ids {where id: ids}
+
 end

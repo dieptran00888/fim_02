@@ -13,7 +13,6 @@ class Admin::AlbumsController < ApplicationController
     if @album.save
       flash[:success] = t "flash.create_success"
       redirect_to admin_albums_path
-      AlbumMailer.notify_mail(@album).deliver_later
     else
       album_support
       flash[:danger] = t "flash.create_failed"
