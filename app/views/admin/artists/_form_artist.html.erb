@@ -8,18 +8,18 @@
     <div class="form-group">
       <%= f.label :type_of_music %><br/>
       <%= f.select :type_of_music,
-        options_for_select(@support.type_of_musics),
-        class: "form-control" %>
+        options_for_select(@support.type_of_musics), {include_blank: true},
+        class: "chosen-select" %>
     </div>
     <div class="form-group">
       <%= f.label :artist_type %><br/>
       <%= f.select :artist_type,
-        options_for_select(@support.artist_types),
-        class: "form-control" %>
+        options_for_select(@support.artist_types), {include_blank: true},
+        class: "chosen-select" %>
     </div>
     <div class="form-group">
       <%= f.label :date_of_birth %><br/>
-      <%= f.text_field :date_of_birth, "data-behaviour": "datepicker",
+      <%= f.text_field :date_of_birth, "data-provide": "datepicker",
         class: "form-control", required: true %>
     </div>
     <%= f.submit t(".submit"), class: "btn btn-primary btn-block btn-lg" %>

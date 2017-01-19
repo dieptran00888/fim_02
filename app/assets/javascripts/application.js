@@ -21,6 +21,7 @@
 //= require jquery.raty
 //= require ratyrate
 //= require ckeditor/init
+//= require chosen-jquery
 
 $(document).on('turbolinks:load', function () {
   $current = 1;
@@ -32,7 +33,11 @@ $(document).on('turbolinks:load', function () {
   $('.reply').hide();
   $('.button-reply').on('click', function () {
     $(this).parent().next().show();
-  })
+  });
+
+  $('.chosen-select').chosen();
+  $('.chosen-container-single').css('width', '250px');
+
 });
 
 function nextSource() {

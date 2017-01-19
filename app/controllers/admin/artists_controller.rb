@@ -14,7 +14,7 @@ class Admin::ArtistsController < ApplicationController
   def create
     if @artist.save
       flash[:success] = t "flash.artists_create_success"
-      redirect_to root_url
+      redirect_to admin_artists_path
     else
       artist_support
       flash[:info] = t "flash.artists_create_failed"
