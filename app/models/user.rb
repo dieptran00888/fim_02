@@ -24,6 +24,14 @@ class User < ApplicationRecord
 
   scope :all_customer, ->{where is_admin: false}
 
+  def list_favorite_songs
+    Song.of_ids Mark.favorite_song_ids_of_user self.id
+  end
+
+  def current_user? user
+    self == user
+  end
+
   class << self
     def from_omniauth auth
       User.find_or_create_by email: auth.info.email do |user|

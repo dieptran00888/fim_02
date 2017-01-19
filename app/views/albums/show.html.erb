@@ -2,7 +2,7 @@
 <div class="container album-wraper" style="background: white; box-shadow:0 0
   10px rgba(0, 0, 0, 0.5);margin-top: 65px;">
   <div class="col-md-8">
-    <div class="col-md-4" style="margin-top: 20px">
+    <div class="" style="margin-top: 20px; margin-left: 15px">
       <% if @album.avatar? %>
         <div class="avatar"><%= image_tag @album.avatar.url %></div>
       <% else %>
@@ -14,12 +14,12 @@
     </div>
     <div class="audio-album">
       <div class="panel panel-default">
-        <a class="panel-body">
-          <div class="audio-player">
+        <div class="panel-body" style=" background-image: url('http://www.playinmusic.com/images/graphic-top-banner.jpg');box-shadow: -5px -1px 41px -10px rgba(0,0,0,1);">
+          <div class="audio-player" style="padding-top: 130px; ">
             <audio id="audio-player" src="<%= @album.songs.first.url_content %>"
             type="audio/mp3" controls="controls" autoplay></audio>
           </div>
-        </a>
+        </div>
         <ul class="list-group">
           <% @album.songs.each do |song| %>
             <li class="list-group-item">
