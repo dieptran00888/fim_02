@@ -1,6 +1,6 @@
+<%= render "layouts/header" %>
 <div class="container album-wraper" style="background: white; box-shadow:0 0
-  10px rgba(0, 0, 0, 0.5);
-">
+  10px rgba(0, 0, 0, 0.5);margin-top: 65px;">
   <div class="col-md-8">
     <div class="col-md-4" style="margin-top: 20px">
       <% if @album.avatar? %>
@@ -28,10 +28,11 @@
           <% end %>
         </ul>
       </div>
-      <p class="glyphicon glyphicon-headphones"><%= " #{@album.impressionist_count}" %></p>
+      <p class="glyphicon glyphicon-headphones" style="float: right"><%= " #{@album
+        .impressionist_count}" %></p>
     </div>
     <div class="row" style="margin-left: 10px; width: 90%; background: #eaeaea;
-      box-shadow: 8px 12px 23px -14px rgba(0,0,0,1);">
+      box-shadow: 8px 12px 23px -14px rgba(0,0,0,1); margin-top: 70px;">
       <div style="padding: 20px">
         <h3><%= t "lyric" %></h3>
         <div class="lyrics-content">
@@ -49,7 +50,7 @@
             </ul>
           <% end %>
           <% @album.songs.each do |song| %>
-            <div class="tab-content tab-lyric-content">
+            <div class="tab-content tab-lyric-content" style="margin-top: 20px;">
               <% song.lyrics.each_with_index do |lyric, index| %>
                 <% if lyric.approved? %>
                   <div id="lyric_<%= lyric.id %>"
@@ -59,7 +60,7 @@
                 <% end %>
               <% end %>
               <div class="contribute-lyric">
-                <%= link_to t(".lyric-contribute"), new_song_lyric_path(song),
+                <%= link_to "Contribute", new_song_lyric_path(song),
                   class: "button-contribute" %>
               </div>
             </div>
@@ -89,14 +90,16 @@
       </ul>
     </div>
   </div>
-  <ul class="col-md-4" style="margin-top: 20px">
+  <ul class="col-md-3" style="list-style: none;
+    margin-top: 45px; text-align: center; width: 30%;">
     <h3>Suggest</h3>
     <ul class="list" style="list-style: none">
       <% Album.all.each do |album| %>
-        <li style="border-bottom: 1px solid silver; height: 40px ">
+        <li style="border-bottom: 1px solid silver; height: 80px;
+          line-height: 80px; ">
           <%= link_to album.name, album_path(album) %>
         </li>
       <% end %>
     </ul>
-  </div>
+  </ul>
 </div>

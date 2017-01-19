@@ -1,7 +1,6 @@
-<div class="row">
-  <div class="col-md-4">
-    <h3><%= @song.name %></h3>
-  </div>
+<%= render "layouts/header" %>
+<div class="container song-wraper" style="background: white; box-shadow:0 0
+  10px rgba(0, 0, 0, 0.5); margin-top: 65px;">
   <div class="col-md-8">
     <div class="audio-player">
       <img class="cover" src="" alt="">
@@ -11,54 +10,88 @@
         <%= @song.impressionist_count %><br/>
         <%= t "user.share" %>
         <%= social_share_button_tag @song.name %>
+    <div class="col-md-4" style="margin-top: 45px">
+      <h3><%= @song.name %></h3>
+      <p>Category: <%= @song.category_id %> </p>
+    </div>
+    <div class="panel panel-default" style="margin-top: 170px;">
+      <div class="panel-body" style="padding-top: 10px">
+        <div class="audio-player" style="width: 95%; padding-top: 10px">
+          <img class="cover" src="" alt="">
+          <audio id="audio-player" src="<%= @song.url_content %>"
+          type="audio/mp3" controls="controls" autoplay></audio>
+        </div>
+
+      </div>
+    </div>
+    <p class="glyphicon glyphicon-headphones" style="float: right">
+      <%= @song.impressionist_count %>
+    </p>
+    <%= render "marks/mark" %>
+    <%= render "marks/form_song_marks" %>
+    <div class="row" style=" width: 100%; background: #eaeaea;
+      box-shadow: 8px 12px 23px -14px rgba(0,0,0,1);">
+      <div style="padding: 20px">
+        <h3><%= t ".lyrics" %></h3>
+
+        <div class="lyrics-content">
+          <ul class="nav nav-tabs">
+            <% @song.lyrics.each_with_index do |lyric, index| %>
+              <% if lyric.approved? %>
+                <li class="<%= "active" if index == 0 %>">
+                  <a data-toggle="tab" href="#lyric_<%= lyric.id %>">
+                    <%= t(".version") + "#{index+1}" %>
+                  </a>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+          <div class="tab-content" style="margin-top: 20px;">
+            <% @song.lyrics.each_with_index do |lyric, index| %>
+              <% if lyric.approved? %>
+                <div id="lyric_<%= lyric.id %>"
+                class="tab-pane fade <%= "in active" if index == 0 %>">
+                  <p><%= strip_tags(lyric.content) %></p>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="contribute-lyric">
+          <%= link_to t(".lyric-contribute"), new_song_lyric_path(@song),
+            class: "button-contribute" %>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 0">
+      <div class="small-2 large-4 columns">
+        <% if user_signed_in? %>
+          <%= rating_for @song, "evaluation",
+            disable_after_rate: true, imdb_avg: true, target: "#hintDiv",
+            targetText: t(".rate_this"), space: true, cancel_place: "right" %>
+          <div id="hintDiv"></div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="div-comment">
+      <%= render "comments/form", parent_id: nil %>
+      <ul>
+        <% if @support.comments %>
+          <%= comments_tree_for @support.comments %>
+        <% end %>
+      </ul>
     </div>
   </div>
-</div>
-<h3><%= t ".lyrics" %></h3>
-
-<div class="lyrics-content">
-  <ul class="nav nav-tabs">
-    <% @song.lyrics.each_with_index do |lyric, index| %>
-      <% if lyric.approved? %>
-        <li class="<%= "active" if index == 0 %>">
-          <a data-toggle="tab" href="#lyric_<%= lyric.id %>">
-            <%= t(".version") + "#{index+1}" %>
-          </a>
-        </li>
-      <% end %>
+  <ul class="col-md-3" style="list-style: none;
+    margin-top: 45px; text-align: center; margin-left: 80px;">
+    <h3 style="margin-bottom: 50px">Suggest</h3>
+    <% Song.all.each do |song| %>
+      <li style="border-bottom: 1px solid silver; height: 80px;
+        line-height: 80px; ">
+        <%= link_to song.name, song_path(song) %>
+      </li>
     <% end %>
   </ul>
-  <div class="tab-content">
-    <% @song.lyrics.each_with_index do |lyric, index| %>
-      <% if lyric.approved? %>
-        <div id="lyric_<%= lyric.id %>"
-          class="tab-pane fade <%= "in active" if index == 0 %>">
-          <p><%= strip_tags(lyric.content) %></p>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
 </div>
-
-<div class="contribute-lyric">
-  <%= link_to t(".lyric-contribute"), new_song_lyric_path(@song),
-    class: "button-contribute" %>
-</div>
-<%= render "comments/form", parent_id: nil %>
-<ul>
-  <% if @support.comments %>
-    <%= comments_tree_for @support.comments %>
-  <% end %>
-</ul>
-<div class="row">
-  <div class="small-2 large-4 columns">
-    <% if user_signed_in? %>
-      <%= rating_for @song, "evaluation",
-        disable_after_rate: true, imdb_avg: true, target: "#hintDiv",
-        targetText: t(".rate_this"), space: true, cancel_place: "right" %>
-      <div id="hintDiv"></div>
-    <% end %>
-  </div>
-</div>
-<%= render "marks/mark" %>
-<%= render "marks/form_song_marks" %>
