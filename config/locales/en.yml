@@ -87,17 +87,28 @@ en:
     albums:
       new:
         heading: "Add New Album"
-        submit: "Submit"
         create_new: "Create new one"
         song_name: "Song's name"
-        album_name: "Album's name"
-        add_fields: "Add Fields"
         singer: "Singer"
       song_fields:
         remove: "Remove"
         song_name: "Song Name"
         url_content: "Url Content"
         singer: "Singer"
+      form:
+        album_name: "Album's name"
+        add_fields: "Add Fields"
+      edit:
+        heading: "Edit album"
+      album:
+        edit: "Edit"
+        remove: "Remove"
+        delete: "Delete"
+      index:
+        name: "Album name"
+        time_pending: "Created at"
+        song: "Song"
+        album_option: "Album Option"
     categories:
       new:
        title: "Create category"
@@ -233,3 +244,4 @@ en:
   helper:
     approved: "Approved"
     pending: "Pending"
+  submit: "Submit"
