@@ -1,0 +1,19 @@
+<h1><%= t ".heading" %></h1>
+<div class="row">
+  <div class="col-md-4">
+    <div class="user-profile">
+      <h3><%= t ".user-info" %></h3>
+      <div class="w3-display-container">
+        <%= image_tag @artist.avatar.url(:medium) %>
+        <div class="w3-display-bottomleft w3-container w3-text-black">
+          <h3><%= @artist.name %></h3>
+        </div>
+      </div>
+      <span class="glyphicon glyphicon-envelope"></span>
+      <%= @artist.type_of_music %><br/>
+      <span class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme">
+      <%= @artist.date_of_birth %><br/>
+      </span>
+    </div>
+  </div>
+</div>

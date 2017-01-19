@@ -5,6 +5,11 @@ class AlbumsController < ApplicationController
   before_action :set_attributes, only: :create
   before_action :album_support, only: :show
 
+  def index
+    @albums = Album.order_rate.paginate page: params[:page],
+      per_page: Settings.per_page
+  end
+
   def new
   end
 

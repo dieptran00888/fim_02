@@ -1,0 +1,12 @@
+<h1><%= t ".heading" %></h1>
+<%= render "search_form" %>
+<table class="table table-hover">
+  <th><%= t ".name" %></th>
+  <% @songs.each do |song| %>
+    <tr>
+      <li class="list-group-item">
+        <%= link_to song.name, song_path(song), data: song.url_content %>
+      </li>
+    </tr>
+  <% end %>
+</table>

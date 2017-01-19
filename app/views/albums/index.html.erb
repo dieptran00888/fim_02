@@ -1,0 +1,9 @@
+<h1><%= t ".heading" %></h1>
+<table class="table table-hover">
+  <% @albums.each do |album| %>
+    <tr>
+      <li> <%= link_to album.name, album_path(album)%> </li>
+    </tr>
+    <%= image_tag album.avatar.url(:medium) %>
+  <% end %>
+</table>
