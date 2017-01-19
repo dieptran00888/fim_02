@@ -10,6 +10,9 @@ class Artist < ApplicationRecord
   validates :type_of_music, presence: true
   validates :artist_type, presence: true
 
+  has_attached_file :avatar, styles: {medium: "300x300>", thumb: "100x100>"}
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
   enum artist_type: [:singer, :composer]
   enum type_of_music: [:pop, :jazz, :rock, :balad, :rap, :another]
 end
