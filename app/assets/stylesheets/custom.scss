@@ -106,10 +106,97 @@ footer {
 
 /* audio */
 
-audio{
+audio {
   width: 100%;
 }
 
 .fa.favorited {
   color: red;
+}
+
+.row.content {
+  height: 550px
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: wheat;
+  height: 100%;
+}
+
+.skin-green .wrapper, .skin-green .main-sidebar, .skin-green .left-side {
+  background-color: #eaeaea;
+}
+
+.well {
+  height: auto;
+
+  color: #FFF;
+  text-align: center;
+}
+
+.slide-bar img {
+  height: 60px;
+  width: 60px;
+  vertical-align: middle;
+  margin-right: 8px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+#musicNavbar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.sidenav {
+  background: url("https://s-media-cache-ak0.pinimg.com/236x/ea/23/16/ea2316224d45899c59bc285ba09dd920.jpg");
+  position: fixed;
+  top:0;
+  box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.div-right {
+  float: right;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  margin-right: -20px;
+  margin-top: -20px;
+}
+
+.row.content {
+  top: 0;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+.slide-bar {
+  background: url("https://myspace.com/songs/images/music-header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.div-item img {
+  width: 100%;
+  height: 274px;
+}
+
+a {
+  color: #777777;
+  text-decoration: none;
+}
+.col-sm-3 h4 {
+  text-align: center;
+}
+
+.row {
+  margin-top: 3em;
+}
+.col-sm-3 {
+  margin-top: 1em;
 }
