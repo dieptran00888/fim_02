@@ -124,7 +124,7 @@ audio {
   height: 100%;
 }
 
-.skin-green .wrapper, .skin-green .main-sidebar, .skin-green .left-side {
+.skin-green .wrapper, .skin-green, .skin-green .left-side {
   background-color: #eaeaea;
 }
 
@@ -199,4 +199,48 @@ a {
 }
 .col-sm-3 {
   margin-top: 1em;
+}
+
+.album-wraper {
+  padding-top: 50px;
+}
+
+.avatar img {
+  width: 150px;
+}
+
+.avatar {
+  float: left;
+  border: 1px solid silver;
+}
+
+.audio-album {
+  width: 90%;
+  margin-left: 15px;
+  margin-top: 200px;
+}
+
+.replies {
+  padding-left: 45px;
+}
+
+.main-sidebar {
+  background-color: #000 ;
+}
+
+.sub-category {
+  margin-left: 20px;
+}
+
+.sub-category a {
+  padding: 5px;
+}
+
+.category-list a{
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.container-fluid {
+  background-color: #d2d6de
 }

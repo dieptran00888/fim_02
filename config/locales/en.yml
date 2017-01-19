@@ -66,6 +66,8 @@ en:
     home:
       title: "Home"
       content: "Home Page"
+      link_login: "Login"
+      link_signup: "Sign up"
     contact:
       title: "Contact"
       content: "Contact Page"

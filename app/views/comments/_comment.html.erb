@@ -7,7 +7,7 @@
     <p><%= comment.content %></p>
   </blockquote>
   <% if comment.root? %>
-    <p>
+    <p style="float: left">
       <%= link_to t(".reply"), new_polymorphic_path([@commentable, comment],
         parent_id: comment.id), class: "button-reply", remote: true %>
     </p>
@@ -16,7 +16,8 @@
       <%= render "comments/form", parent_id: comment.id %>
     </div>
   <% end %>
-  <div><%= link_to t(".delete"), polymorphic_path([@commentable, comment]),
+  <div style="padding-top: 3.5px;
+    margin-left: 52px;"><%= link_to t(".delete"), polymorphic_path([@commentable, comment]),
     method: :delete %>
   </div>
 </li>

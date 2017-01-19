@@ -1,6 +1,7 @@
 <%= form_for [@commentable, @comment], remote: true do |f| %>
   <%= f.hidden_field :parent_id, value: parent_id %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.text_area :content, placeholder: t(".comment_placeholder") %><br/>
-  <%= f.submit t(".comment") %>
+  <%= f.text_area :content, placeholder: t(".comment_placeholder"), size: "85x5"
+  %><br/>
+  <%= f.submit t(".comment"), class: "button-comment" %>
 <% end %>
