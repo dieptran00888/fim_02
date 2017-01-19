@@ -13,6 +13,31 @@
   </div>
 </div>
 <h3><%= t ".lyrics" %></h3>
+
+<div class="lyrics-content">
+  <ul class="nav nav-tabs">
+    <% @song.lyrics.each_with_index do |lyric, index| %>
+      <% if lyric.approved? %>
+        <li class="<%= "active" if index == 0 %>">
+          <a data-toggle="tab" href="#lyric_<%= lyric.id %>">
+            <%= t(".version") + "#{index+1}" %>
+          </a>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <div class="tab-content">
+    <% @song.lyrics.each_with_index do |lyric, index| %>
+      <% if lyric.approved? %>
+        <div id="lyric_<%= lyric.id %>"
+          class="tab-pane fade <%= "in active" if index == 0 %>">
+          <p><%= strip_tags(lyric.content) %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
 <div class="contribute-lyric">
   <%= link_to t(".lyric-contribute"), new_song_lyric_path(@song),
     class: "button-contribute" %>
