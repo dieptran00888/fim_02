@@ -35,6 +35,8 @@ gem "impressionist"
 gem "chosen-rails"
 gem "paperclip", "~> 5.0.0"
 gem "friendly_id","~> 5.1.0"
+gem "social-share-button"
+gem "sidekiq"
 
 group :development, :test do
   gem "sqlite3"

@@ -18,4 +18,5 @@
  *= require chosen
  *= require_tree .
  *= require_self
+ *= require social-share-button
  */
