@@ -9,6 +9,8 @@
         type="audio/mp3" controls="controls"></audio>
         <%= t ".views" %>
         <%= @song.impressionist_count %><br/>
+        <%= t "user.share" %>
+        <%= social_share_button_tag @song.name %>
     </div>
   </div>
 </div>
