@@ -49,6 +49,7 @@ $(document).on('turbolinks:load', function () {
   $('.chosen-select').chosen();
   $('.chosen-container-single').css('width', '250px');
 
+  CKEDITOR.replace('#ckeditor_content');
 });
 
 function nextSource() {
