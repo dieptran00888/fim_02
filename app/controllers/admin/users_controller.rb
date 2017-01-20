@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController 
-  load_and_authorize_resource find_by: :slug
+  load_and_authorize_resource
 
   def index
     @search = User.search params[:q]

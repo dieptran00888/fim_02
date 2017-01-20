@@ -24,35 +24,40 @@
 //= require chosen-jquery
 
 $(document).on('turbolinks:load', function () {
-  $current = 1;
-  $('.list-group-item').eq($current-1).css('background', 'wheat');
-  $('.contribute-lyric').hide();
-  $('.contribute-lyric').eq($current-1).show();
-  $('.tabs-lyric').hide();
-  $('.tabs-lyric').eq($current-1).show();
-  $('.tab-lyric-content').hide();
-  $('.tab-lyric-content').eq($current-1).show();
-  $('#audio-player').on('ended', function () {
-    $source='';
-    $('.contribute-lyric').eq($current-1).hide();
-    $('.tabs-lyric').eq($current-1).hide();
-    $('.tab-lyric-content').eq($current-1).hide();
-    $('.list-group-item').eq($current-1).css('background', 'none');
-    $('#audio-player').attr('src', nextSource());
-  });
 
-  $('.reply').hide();
-  $('.button-reply').on('click', function () {
-    $(this).parent().next().show();
-  });
+  if($('#audio-player').length) {
+    $current = 1;
+    $('.list-group-item').eq($current-1).css('background', 'wheat');
+    $('.contribute-lyric').hide();
+    $('.contribute-lyric').eq($current-1).show();
+    $('.tabs-lyric').hide();
+    $('.tabs-lyric').eq($current-1).show();
+    $('.tab-lyric-content').hide();
+    $('.tab-lyric-content').eq($current-1).show();
+    $('#audio-player').on('ended', function () {
+      $source='';
+      $('.contribute-lyric').eq($current-1).hide();
+      $('.tabs-lyric').eq($current-1).hide();
+      $('.tab-lyric-content').eq($current-1).hide();
+      $('.list-group-item').eq($current-1).css('background', 'none');
+      $('#audio-player').attr('src', nextSource());
+    });
 
-  $('.chosen-select').chosen();
-  $('.chosen-container-single').css('width', '250px');
+    $('.reply').hide();
+    $('.button-reply').on('click', function () {
+      $(this).parent().next().show();
+    });
 
-  $('.icon-next').on('click', function () {
-    $('.list-group-item').eq($current-1).css('background', 'none');
-    $('#audio-player').attr('src', nextSource());
-  });
+    $('.chosen-select').chosen();
+    $('.chosen-container-single').css('width', '250px');
+
+    $('.icon-next').on('click', function () {
+      $('.list-group-item').eq($current-1).css('background', 'none');
+      $('#audio-player').attr('src', nextSource());
+    });
+  } else {
+
+  }
 
   CKEDITOR.replace('#ckeditor_content');
 });
