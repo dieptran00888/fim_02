@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
   ratyrate_rater
   acts_as_paranoid
   has_many :comments, as: :commentable, dependent: :destroy

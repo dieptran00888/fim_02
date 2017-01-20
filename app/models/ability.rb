@@ -7,6 +7,7 @@ class Ability
       can :manage, [User, Category, Artist, Album]
       can :manage, [Lyric]
     else
+      can :manage, [User]
       can :manage, [Album]
       can :create, Lyric
     end
