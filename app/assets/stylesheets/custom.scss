@@ -186,10 +186,6 @@ h2 {
   height: 274px;
 }
 
-a {
-  color: #777777;
-  text-decoration: none;
-}
 .col-sm-3 h4 {
   text-align: center;
 }
@@ -244,3 +240,255 @@ a {
 .container-fluid {
   background-color: #d2d6de
 }
+
+//header
+
+header {
+  background-image: url('http://static.mp3.zdn.vn/skins/zmp3-v4.2/images/lunar_new_year_2007.jpg');
+  background-size: auto 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #c5051b;
+}
+
+header .container {
+  overflow: visible;
+  width: 1000px;
+}
+
+header .logo {
+  float: left;
+  width: 185px;
+  height: 40px;
+  margin-top: 6px;
+}
+
+.section-search {
+  position: relative;
+}
+
+header .nav-account {
+  line-height: 50px;
+  font-weight: 300;
+}
+
+header .nav-account {
+  line-height: 50px;
+  font-weight: 300;
+}
+
+header .logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.section-search .search {
+  float: left;
+  margin-top: 10px;
+  width: 355px;
+  position: relative;
+}
+
+.section-search .suggestion-2 {
+  position: absolute;
+  width: 355px;
+  top: 39px;
+  left: 185px;
+  z-index: 9999999;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+header .nav-account .slash {
+  margin: 0 5px;
+  font-weight: 500;
+}
+
+header .user-section {
+  padding-top: 4px;
+}
+
+.pull-right {
+  float: right;
+}
+.none {
+  display: none!important;
+}
+
+
+.jumper-link li a, .nav-account, .nav-account a, .hot-news-bar span, .slide-body .slide-caption, .subcribe a, .feature-artist .description .txt-primary, .feature-artist .description .txt-info, .pagination ul li a.active, .pagination ul li a:hover, .top-banner .caption, .quanlity-hq, .info-summary, .box-info-artist .info-summary a, .small-button, footer a {
+  color: #fff;
+}
+
+.section-search .search .input-btn {
+  white-space: nowrap;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.section-search .search .input-btn .btn {
+  width: 34px;
+  height: 29px;
+  background-position: 5px -34px;
+  line-height: 29px;
+}
+.hide-text {
+  border: 0;
+  background-color: transparent;
+  color: transparent;
+  text-shadow: none;
+  font: 0/0 a;
+}
+.zicon, .dropdown ul li a.checked:before, .filter-display li i, .main-nav .home a, .s50x50, .icon33 {
+  background-image: url("http://static.mp3.zdn.vn/skins/zmp3-v4.2/images/icon.png");
+  background-repeat: no-repeat;
+}
+
+button, input, select, textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+button, input {
+  line-height: normal;
+  border-radius: 0;
+}
+input, button, textarea, select, optgroup, option {
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.section-search .search .input-txt {
+  float: left;
+  padding: 5px 15px;
+  width: 100%;
+  border: 0 none;
+  height: 29px;
+}
+
+//nav
+
+nav {
+  width: 100%;
+  min-width: 1000px;
+  height: 40px;
+}
+
+.six-color-bg, nav {
+  position: relative;
+  z-index: 1234;
+  background: #e4e4e4;
+}
+
+.group {
+  display: block;
+  clear: both;
+}
+
+nav .main-nav>li {
+  float: left;
+  position: relative;
+}
+li {
+  list-style: none;
+}
+
+nav .main-nav li.home a {
+  background-position: -15px 1px;
+  width: 25px;
+  height: 100%;
+  text-indent: -9999px;
+  padding: 0;
+}
+.zicon, .dropdown ul li a.checked:before, .filter-display li i, .main-nav .home a, .s50x50, .icon33 {
+  background-image: url(http://static.mp3.zdn.vn/skins/zmp3-v4.2/images/icon.png);
+  background-repeat: no-repeat;
+}
+
+nav .main-nav>li>a {
+  line-height: 42px;
+  font-weight: 400;
+  padding: 0 15px;
+}
+nav .main-nav li a {
+  line-height: 42px;
+  padding: 0 20px;
+  display: block;
+  white-space: nowrap;
+}
+
+nav .main-nav .separation {
+  width: 1px;
+  height: 20px;
+  margin: 10px 5px 0;
+  background: #ccc;
+}
+
+nav .main-nav .megamenu.submenu.menu-col-4 {
+  width: 682px;
+}
+
+nav .main-nav .megamenu.submenu {
+  position: absolute;
+  top: 39px;
+  z-index: 9999999999;
+  background: #fff;
+  left: 0;
+  border: 1px solid #d9d9d9;
+  -moz-box-shadow: 0 3px 8px rgba(3,3,3,0.26);
+  -webkit-box-shadow: 0 3px 8px rgba(3,3,3,0.26);
+  box-shadow: 0 3px 8px rgba(3,3,3,0.26);
+  font-family: "Open Sans","segoe ui",Helvetica,Arial,sans-serif;
+  padding: 15px 0;
+}
+nav .main-nav>li .megamenu {
+  display: none;
+}
+
+nav .main-nav .megamenu.submenu .subcol.menu-col-1 {
+  width: 170px;
+}
+nav .main-nav .megamenu.submenu .subcol {
+  float: left;
+}
+
+nav .main-nav .megamenu.submenu .subcol .title-menu {
+  height: 35px;
+  line-height: 35px;
+  margin: 0 20px;
+  text-transform: uppercase;
+  color: #333;
+  font-weight: 500;
+}
+
+nav .main-nav .megamenu.submenu .subcol .title-menu a {
+  line-height: 35px;
+  padding: 0;
+}
+
+nav .main-nav .megamenu.submenu .subcol li {
+  float: left;
+  width: 170px;
+}
+
+.main-nav li a, .lyrics-container h3, .header-frm, .con-select .option-select label, .box-artist .artist-info h2, .wrap-2-col .sidebar .data-list>li>a, .wrap-2-col .sidebar .data-list>li>h1>a, .txt-title-lagre, .info-primary .info-content h2, .info-primary .info-content li span, .info-primary .info-content .read-more, .panel-filter li a:hover, .panel-filter li.selected a, .panel-filter li a:hover, .info-top-play .txt-primary, .info-top-play .txt-primary:hover, .info-song-top a, .lyrics-container {
+  color: #333;
+}
+
+.wrap-content {
+  width: 650px;
+  float: left;
+}
+
+.wrap-sidebar {
+  float: right;
+  width: 300px;
+  position: relative;
+}
+
+
