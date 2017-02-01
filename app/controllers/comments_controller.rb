@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.build comment_params
     @comment.save
     respond_to do |format|
+      format.html
       format.js
     end
   end

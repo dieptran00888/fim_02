@@ -7,17 +7,16 @@
     <p><%= comment.content %></p>
   </blockquote>
   <% if comment.root? %>
-    <p style="float: left">
-      <%= link_to t(".reply"), new_polymorphic_path([@commentable, comment],
+    <!--<p style="float: left">-->
+      <%#= link_to t(".reply"), new_polymorphic_path([@commentable, comment],
         parent_id: comment.id), class: "button-reply", remote: true %>
-    </p>
+    <!--</p>-->
 
-    <div class="reply">
-      <%= render "comments/form", parent_id: comment.id %>
-    </div>
+    <!--<div class="reply">-->
+      <%#= render "comments/form", parent_id: comment.id %>
+    <!--</div>-->
   <% end %>
-  <div style="padding-top: 3.5px;
-    margin-left: 52px;"><%= link_to t(".delete"), polymorphic_path([@commentable, comment]),
-    method: :delete, remote: true %>
+  <div style="margin-bottom: 30px"><%= link_to t(".delete"),
+    polymorphic_path([@commentable, comment]), method: :delete, remote: true %>
   </div>
 </li>
