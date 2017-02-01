@@ -1,5 +1,5 @@
 <div class="container album-wraper" style="background: white; box-shadow:0 0
-  10px rgba(0, 0, 0, 0.5);margin-top: 65px;">
+  10px rgba(0, 0, 0, 0.5)">
   <div class="col-md-8">
     <div class="" style="margin-top: 20px; margin-left: 15px">
       <% if @album.avatar? %>
@@ -72,7 +72,7 @@
         </div>
       </div>
     </div>
-    <div class="row rate" style="margin-top: 0">
+    <div class="row rate" style="">
       <div class="row" style="margin-left: 20px">
         <div class="small-2 large-4 columns">
           <% if user_signed_in? %>
@@ -84,8 +84,9 @@
         </div>
       </div>
     </div>
+    </br>
 
-    <div class="row comment" style="margin-left: 10px; width: 60%">
+    <div class="row comment" style="margin-left: 10px; clear: both">
       <%= render "comments/form", parent_id: nil %>
       <ul id="list-comment">
         <% if @support.comments %>

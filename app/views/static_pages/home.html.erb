@@ -1,34 +1,70 @@
 <% provide :title, t(".title") %>
 <%# if signed_in? %>
-  <%# unless current_user.is_admin? %>
-    <div class="wrap-body container">
-      <div class="col-md-8 wrap-content">
-        <div id="albumHot" class="section">
-          <h1 class="title-section has-link">
-            <a href="">Album hot</a>
-          </h1>
-          <div class="row">
-            <div class="album-item des-inside otr col-3">
-              <a href="">
-                <img src="" alt="">
-                <span></span>
-              </a>
-              <div class="des">
-                <h3 class="title-item txt-primary ellipsis">
-                  <a href=""></a>
-                </h3>
-                <div class="inblock ellipsis">
-                  <h4 class="title-sd-item txt-info fn-artist"></h4>
-                </div>
+<%# unless current_user.is_admin? %>
+<div class="wrap-body container">
+  <div class="col-md-8 wrap-content">
+    <div id="albumHot" class="section">
+      <h1 class="title-section has-link">
+        <a href="">Album hot</a>
+      </h1>
+      <% @albums.each do |album| %>
+        <div class="row">
+          <div class="album-item des-inside otr col-4">
+            <a href="/albums/<%= album.id %>">
+              <% if album.avatar? %>
+                <%= image_tag album.avatar.url %>
+              <% else %>
+                <img src="http://zmp3-photo.d.za.zdn.vn/thumb/240_240/http://zmp3-photo.d.za.zdn.vn/skins/zmp3-v4/images/default2/220x220.jpg" alt="" width="200">
+              <% end %>
+              <span></span>
+            </a>
+            <div class="des">
+              <h3 class="title-item txt-primary ellipsis">
+                <a href="/albums/<%= album.id %>"><%= album.name %></a>
+              </h3>
+              <div class="inblock ellipsis">
+                <h4 class="title-sd-item txt-info fn-artist"></h4>
               </div>
             </div>
           </div>
         </div>
+      <% end %>
+    </div>
 
-      </div>
-      <div class="wrap-sidebar">
-        <h2>Charts song</h2>
+  </div>
+  <div class="wrap-sidebar">
+    <div class="widget widget-tab">
+      <h2>Charts song</h2>
+      <ul class="tab-nav">
+        <!--<li><a href="">Viet Nam</a></li>-->
+      </ul>
+      <div class="tab-pane widget-song-countdown">
+        <% index = 1 %>
+        <% @songs.each do |song| %>
+          <% if song.impressionist_count > 5 %>
+            <% @singer = Artist.find(song.singer_id) %>
+            <ul class="fn-list">
+              <li class="fn-item fn-song">
+                <span class="rank rank-2 fn-order"></span>
+                <a href="/songs/<%= song.id %>">
+                  <h3 class="song-name"><%= (index) %>- <%= song.name %></h3>
+                </a>
+                <div class="inblock singer-name ellipsis fn-artist_list">
+                  <a href="/artists/<%= @singer.id %>">
+                    <h4 class="txt-info fn-artist"><%= @singer.name %></h4>
+                  </a>
+                </div>
+                <i class="txt-info pull-right view-stas fn-score fn-number">
+                  <%= song.impressionist_count %>
+                  <% index = index+1 %>
+                </i>
+              </li>
+            </ul>
+          <% end %>
+        <% end %>
       </div>
     </div>
-  <%# end %>
+  </div>
+</div>
+<%# end %>
 <%# end %>
