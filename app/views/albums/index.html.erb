@@ -1,19 +1,6 @@
 <div class="container-fluid">
-  <div class="col-sm-2 sidenav hidden-xs">
-    <img src="http://dxta.github.io/img/about/framgia.png" alt=""
-    style="width: 100%">
-    <ul class="nav nav-pills nav-stacked">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="/albums">Albums</a></li>
-      <li><a href="<%= songs_path %>">Songs</a></li>
-      <li><%= link_to current_user.name, user_path(current_user) %></li>
-      <li><%= link_to "Logout",
-        destroy_user_session_path, method: :delete %></li>
-    </ul>
-    <br>
-  </div>
   <br>
-  <div class="col-sm-10 div-right">
+  <div class="div-right container">
     <div class="row">
       <h2 style="color: #777777" id="album"><%= link_to "Albums" %></h2>
       <% @albums.each do |album| %>

@@ -1,67 +1,98 @@
 <% provide :title, t(".title") %>
 <%# if signed_in? %>
 <%# unless current_user.is_admin? %>
-<div class="wrap-body container">
-  <div class="col-md-8 wrap-content">
-    <div id="albumHot" class="section">
-      <h1 class="title-section has-link">
-        <a href="">Album hot</a>
-      </h1>
-      <% @albums.each do |album| %>
-        <div class="row">
-          <div class="album-item des-inside otr col-4">
-            <a href="/albums/<%= album.id %>">
-              <% if album.avatar? %>
-                <%= image_tag album.avatar.url %>
-              <% else %>
-                <img src="http://zmp3-photo.d.za.zdn.vn/thumb/240_240/http://zmp3-photo.d.za.zdn.vn/skins/zmp3-v4/images/default2/220x220.jpg" alt="" width="200">
-              <% end %>
-              <span></span>
-            </a>
-            <div class="des">
-              <h3 class="title-item txt-primary ellipsis">
-                <a href="/albums/<%= album.id %>"><%= album.name %></a>
-              </h3>
-              <div class="inblock ellipsis">
-                <h4 class="title-sd-item txt-info fn-artist"></h4>
+<div class="wrapper-page">
+  <div class="wrap-body">
+    <div class="wrap-content">
+      <div id="feature" class="slide fn-slide-show">
+        <div class="slide-body non-opacity">
+          <div class="slick-track" style="width: 3240px">
+            <img src="http://zmp3-photo.d.za.zdn.vn/banner/0/0/00b11b8e145600dcf7528bc9ac543be7_1484538982.jpg" alt="Khắc Họa Tương Tư">
+          </div>
+        </div>
+        <div class="slide-thumb">
+          <ul>
+            <li><img width="124" height="50" src="http://zmp3-photo.d.za.zdn.vn/banner/d/0/d041b5121ded2e87bffe9f99251098e2_1485921257.jpg" alt="Khắc Họa Tương Tư"></li>
+            <li><img width="124" height="50" src="http://zmp3-photo.d.za.zdn.vn/banner/0/0/00b11b8e145600dcf7528bc9ac543be7_1484538982.jpg" alt="Today's Top Hits"></li>
+            <li><img width="124" height="50" src="http://zmp3-photo.d.za.zdn.vn/banner/5/9/590d1b08973cc1d4eb2e36021eeeefa1_1484297182.jpg" alt="Nhạc Việt Được Nghe Nhiều Năm 2017"></li>
+            <li><img width="124" height="50" src="http://zmp3-photo.d.za.zdn.vn/banner/d/0/d001d9998f1662bc725e16c5f444219a_1485671017.jpg" alt="Đón Xuân Này Nhớ Xuân Xưa"></li>
+            <li><img width="124" height="50" src="http://zmp3-photo.d.za.zdn.vn/banner/c/e/cef54342913d2a7625d858a2dcea05a8_1485921749.jpg" alt="Đón Xuân Này Nhớ Xuân Xưa"></li>
+          </ul>
+        </div>
+      </div>
+      <div id="albumHot" class="section" style="float: left">
+        <h2 class="title-section has-link" style="overflow: hidden">
+          <a href="" style="float: left; text-transform: uppercase; color: #004d40 ">Album
+            hot</a>
+        </h2>
+        <% @albums.each do |album| %>
+          <% @singer = Artist.find album.songs.first.singer_id %>
+          <div class="row item-album" style="margin: 0;padding: 0">
+            <div class="album-item des-inside otr col-4">
+              <a href="/albums/<%= album.id %>">
+                <% if album.avatar? %>
+                  <%= image_tag album.avatar.url %>
+                <% else %>
+                  <img src="http://zmp3-photo.d.za.zdn.vn/thumb/240_240/http://zmp3-photo.d.za.zdn.vn/skins/zmp3-v4/images/default2/220x220.jpg" alt="" width="200">
+                <% end %>
+                <span></span>
+              </a>
+              <div class="des">
+                <h4 class="title-item txt-primary ellipsis">
+                  <a href="/albums/<%= album.id %>"><%= album.name %></a>
+                </h4>
+                  <a href="/artists/<%= @singer.id%>">
+                    <h5 class="txt-info fn-artist"><%= @singer.name %></h5>
+                  </a>
+                <div class="inblock ellipsis">
+                  <h4 class="title-sd-item txt-info fn-artist"></h4>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-
-  </div>
-  <div class="wrap-sidebar">
-    <div class="widget widget-tab">
-      <h2>Charts song</h2>
-      <ul class="tab-nav">
-        <!--<li><a href="">Viet Nam</a></li>-->
-      </ul>
-      <div class="tab-pane widget-song-countdown">
-        <% index = 1 %>
-        <% @songs.each do |song| %>
-          <% if song.impressionist_count > 5 %>
-            <% @singer = Artist.find(song.singer_id) %>
-            <ul class="fn-list">
-              <li class="fn-item fn-song">
-                <span class="rank rank-2 fn-order"></span>
-                <a href="/songs/<%= song.id %>">
-                  <h3 class="song-name"><%= (index) %>- <%= song.name %></h3>
-                </a>
-                <div class="inblock singer-name ellipsis fn-artist_list">
-                  <a href="/artists/<%= @singer.id %>">
-                    <h4 class="txt-info fn-artist"><%= @singer.name %></h4>
-                  </a>
-                </div>
-                <i class="txt-info pull-right view-stas fn-score fn-number">
-                  <%= song.impressionist_count %>
-                  <% index = index+1 %>
-                </i>
-              </li>
-            </ul>
-          <% end %>
         <% end %>
+      </div>
+
+    </div>
+    <div class="wrap-sidebar">
+      <div id="topic-hot" class="widget widget-cate">
+        <ul class="clearfix" style="padding: 0">
+          <li><img src="http://zmp3-photo.d.za.zdn.vn/covers/c/f/cf3fdf8fd09c5c08569c58bd1bf9b5bf_1484660158.jpg" class="img-responsive" alt="Spring"></li>
+          <li><img src="http://zmp3-photo.d.za.zdn.vn/covers/7/e/7ea11214270a0912ac3c1a5b550a45c4_1480309516.jpg" class="img-responsive" alt="Motivation"></li>
+          <li><img src="http://zmp3-photo.d.za.zdn.vn/covers/3/f/3fea4f68101026ad6fbb002bcf9d9ccd_1483951622.jpg" class="img-responsive" alt="Xuân Đinh Dậu 2017"></li>
+          <li><img src="http://zmp3-photo.d.za.zdn.vn/covers/b/e/be209d05b5094bf1c3383806d341fdf5_1459737494.png" class="img-responsive" alt="Music For Love"></li>
+        </ul>
+      </div>
+      <div class="widget widget-tab">
+        <h2 style="color: #004d40;">Chart songs</h2>
+        <ul class="tab-nav">
+          <!--<li><a href="">Viet Nam</a></li>-->
+        </ul>
+        <div class="tab-pane widget-song-countdown">
+          <% index = 1 %>
+          <% @songs.each do |song| %>
+            <% if song.impressionist_count > 5 %>
+              <% @singer = Artist.find(song.singer_id) %>
+              <ul class="fn-list">
+                <li class="fn-item fn-song">
+                  <span class="rank rank-2 fn-order"></span>
+                  <a href="/songs/<%= song.id %>">
+                    <h4 class="song-name"><%= (index) %>- <%= song.name %></h4>
+                  </a>
+                  <div class="inblock singer-name ellipsis fn-artist_list">
+                    <a href="/artists/<%= @singer.id %>">
+                      <h5 class="txt-info fn-artist"><%= @singer.name %></h5>
+                    </a>
+                  </div>
+                  <i class="txt-info pull-right view-stas fn-score fn-number">
+                    <%= song.impressionist_count %>
+                    <% index = index+1 %>
+                  </i>
+                </li>
+              </ul>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

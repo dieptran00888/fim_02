@@ -478,6 +478,7 @@ nav .main-nav .megamenu.submenu .subcol li {
 
 .wrap-content {
   float: left;
+  width: 650px;
 }
 
 .wrap-sidebar {
@@ -487,8 +488,8 @@ nav .main-nav .megamenu.submenu .subcol li {
 }
 
 .album-item img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 
 .row {
@@ -500,6 +501,7 @@ nav .main-nav .megamenu.submenu .subcol li {
 
 .album-item {
   position: relative;
+  padding: 0 6px;
 }
 
 .wrap-body {
@@ -529,3 +531,101 @@ nav .main-nav .megamenu.submenu .subcol li {
   line-height: 26px;
   width: 35px;
 }
+
+
+.slide .slide-body {
+  width: 650px!important;
+  height: 274px!important;
+  overflow: hidden;
+}
+
+.slide .slide-body {
+  position: relative;
+  overflow: hidden;
+  width: 650px !important;
+  height: 274px !important;
+  border: 1px solid #dfdfdf;
+  margin-bottom: 7px;
+}
+
+.slide .slide-body .slide-scroll .item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.slide .slide-thumb {
+  margin-left: -45px;
+  text-align: center;
+  z-index: 1;
+}
+
+.slide .slide-thumb li {
+  display: inline-block;
+  float: left;
+  width: 124px;
+  height: 48px;
+  margin-left: 7px;
+  border: 1px solid #dfdfdf;
+  overflow: hidden;
+}
+
+.wrap-sidebar .widget {
+  margin-bottom: 20px;
+  position: relative;
+}
+.wrap-sidebar .widget {
+  margin-bottom: 20px;
+}
+.widget-cate {
+  margin-bottom: 30px;
+}
+
+.widget-cate ul li {
+  margin: 0 0 15px;
+}
+
+.widget-cate ul li img {
+  display: block;
+  height: 90px;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+//.wrapper {
+//  background-image: url(http://laguaz.net/skins/newyear2017/images/background-image.png);
+//  background-position: top center;
+//  background-attachment: fixed;
+//  background-repeat: no-repeat;
+//  background-color: #70001e;
+//}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: darkviolet;
+}
+
+.wrapper-page {
+  background-color: #fff;
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  //padding: 15px 12px 0;
+}
+
+.fn-artist{
+  color: #888;
+}
+
+h5:hover {
+  color: darkviolet;
+}
+
