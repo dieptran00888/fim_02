@@ -1,13 +1,61 @@
-<h1><%= t ".heading" %></h1>
-<%= render "search_form" %>
-<table class="table table-hover">
-  <tr>
-    <th><%= t ".name" %></th>
-  </tr>
-  <% @artists.each do |artist| %>
-    <li class="list-group-item">
-      <%= link_to artist.name, artist_path(artist) %>
-    </li>
-    <%= image_tag artist.avatar.url(:medium) %>
-  <% end %>
-</table>
+<div class="wrapper-page" style="margin: 0 auto;padding: 15px 12px 0;">
+  <div class="wrap-2-col">
+    <div class="sidebar fn-sidebar-fixed">
+      <ul class="data-list">
+        <li class="active">
+          <h3 style="color: #004d40">Hot Artist</h3>
+        </li>
+      </ul>
+      <div class="fn-scrollbar mCustomScrollbar _mCS_1 mCS-autoHide">
+        <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_outside" tabindex="0">
+          <div id="mCSB_1_container" class="mCSB_container" style="position: relative; left: 0px; top: 0px;" dir="ltr">
+            <ul class="data-list">
+              <% @music_types = Artist.type_of_musics.keys %>
+              <% @music_types.each do |type| %>
+                <li class="">
+                  <a href="#<%= type %>">
+                    <%= type %>
+                  </a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% @music_types.each do |type| %>
+      <div class="zcontent">
+        <h2 class="title-section" id="<%= type %>">
+          <a href="#"><%= type %>
+            <i class="icon-arrow"></i></a>
+        </h2>
+        <div class="tab-pane">
+
+          <div class="row">
+            <% @artists.each do |artist| %>
+              <% if artist.type_of_music == type %>
+                <div class="pone-of-four" style="width: 175px">
+                  <div class="item">
+                    <a href="<%= artist_path(artist) %>">
+                      <% if artist.avatar? %>
+                        <%= image_tag artist.avatar.url %>
+                      <% else %>
+                        <%= image_tag "https://thumb1.shutterstock.com/display_pic_with_logo/2505571/450617644/stock-vector-cool-avatar-black-rap-singer-modern-simple-and-clear-design-vector-icon-in-flat-style-450617644.jpg" %>
+                      <% end %>
+                      <span class="icon-circle-play otr"></span>
+                    </a>
+                  </div>
+                  <div class="description">
+                    <h4 class="title-item ellipsis">
+                      <a href="<%= artist_path(artist) %>"><%= artist.name %></a>
+                    </h4>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

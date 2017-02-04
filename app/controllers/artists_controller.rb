@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController 
-  load_and_authorize_resource
+  load_resource
 
   def index
     @search = Artist.search params[:q]

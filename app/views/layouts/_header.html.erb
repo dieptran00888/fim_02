@@ -1,93 +1,16 @@
 <header>
   <div class="container group">
     <div class="logo">
-      <a href="/" title="Zing MP3 - Đỉnh cao âm nhạc" class="hide-text">
+      <a href="/" class="hide-text">
         <img src="https://media.licdn.com/media/AAEAAQAAAAAAAAfeAAAAJGY4ODMyMTcwLTZmODYtNDgxMi1iMDc0LWYwZjQ2OWVlYWQ3Mg.png" style="height: 60px" />
       </a>
     </div>
     <div id="sug" class="section-search">
       <form action="/tim-kiem/bai-hat.html" method="get" class="search">
-        <input type="text" name="q" placeholder="Nhập nội dung cần tìm" class="input-txt" autocomplete="off">
-        <span class="input-btn"> <button type="submit" class="zicon btn hide-text">Tìm kiếm</button> </span>
+        <input type="text" name="q" placeholder="Search..." class="input-txt"
+        autocomplete="off">
+        <span class="input-btn"> <button type="submit" class="zicon btn hide-text">Search</button> </span>
       </form>
-      <div id="sugResult" class="fn-result suggestion-2 none">
-        <ul>
-          <li id="sugTopKeyword" class="none">
-            <ul class="fn-list" style="cursor: pointer;">
-              <li id="tplTopKeyword" class="none fn-item">
-                <div class="meta-search">
-                  <a class="ellipsis pad-top-5">
-                    <span class="fn-name fn-highlight"></span> </a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li id="sugTop" class="none">
-            <div class="title-row"><span class="ics zicon"></span>Top Kết Quả
-            </div>
-            <ul class="fn-list"></ul>
-          </li>
-          <li id="sugArtist" class="none">
-            <div class="title-row"><span class="ics zicon ics-artist"></span>Nghệ
-              Sĩ
-            </div>
-            <ul class="fn-list">
-              <li id="tplSugArtist" class="none fn-item">
-                <a class="fn-link track-log" href="#">
-                  <div class="meta-search ellipsis"><img class="fn-thumb">
-                    <span class="fn-name fn-highlight"></span></div>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li id="sugSong" class="none">
-            <div class="title-row"><span class="ics zicon ics-song"></span>Bài
-              Hát
-            </div>
-            <ul class="fn-list">
-              <li id="tplSugSong" class="none fn-item">
-                <a class="fn-link track-log" href="#">
-                  <div class="meta-search">
-                    <p class="ellipsis pad-top-5">
-                      <span class="fn-name fn-highlight"></span> <br>
-                      <span class="fn-artist fn-highlight txt-info"></span></p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li id="sugAlbum" class="none">
-            <div class="title-row"><span class="ics zicon ics-album"></span>Album
-            </div>
-            <ul class="fn-list">
-              <li id="tplSugAlbum" class="none fn-item">
-                <a class="fn-link track-log" href="#">
-                  <div class="meta-search"><img class="fn-thumb">
-                    <p class="ellipsis pad-top-5">
-                      <span class="fn-name fn-highlight"></span> <br>
-                      <span class="fn-artist fn-highlight txt-info"></span></p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li id="sugVideo" class="none">
-            <div class="title-row"><span class="ics zicon ics-video"></span>Video
-            </div>
-            <ul class="fn-list">
-              <li id="tplSugVideo" class="none fn-item">
-                <a class="fn-link track-log" href="#">
-                  <div class="meta-search"><img class="fn-thumb">
-                    <p class="ellipsis pad-top-5">
-                      <span class="fn-name fn-highlight"></span> <br>
-                      <span class="fn-artist fn-highlight txt-info"></span></p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
     </div>
     <div class="nav-account pull-right fn-guestbox">
       <% if user_signed_in? %>
@@ -106,10 +29,9 @@
 <nav>
   <div class="container">
     <ul class="main-nav group">
-      <li class="home"><a title="Zing MP3" href="/">Zing MP3</a></li>
+      <li class="home"><a href="/">Framusic</a></li>
 
-      <li class="active"><a class="fn-login" href="#" title="Nhạc cá
-      nhân">Nhạc Cá Nhân</a>
+      <li class="active"><a class="fn-login" href="#">Personal Music</a>
         <div class="megamenu submenu menu-col-1 fn-userbox">
           <div class="subcol menu-col-1-narrow">
             <div class="subinner_item">
@@ -125,14 +47,14 @@
       </li>
 
       <li class="separation"></li>
-      <li><a title="Chủ đề" href="#">Chủ Đề</a>
+      <li><a href="#">Categories</a>
         <div class="megamenu submenu menu-col-4">
           <div class="subcol menu-col-1">
-            <div class="title-menu"><a href="#" title="Nổi Bật">Nổi Bật</a></div>
+            <div class="title-menu"><a href="#" >Nổi Bật</a></div>
             <div class="subinner_item">
               <ul>
-                <li><a title="Nhạc Hot" href="/chu-de/Nhac-Hot/IWZ9Z0C8.html">Nhạc Hot</a></li>
-                <li><a title="Nhạc Việt Mới" href="/chu-de/Nhac-Viet-Moi/IWZ9Z0ED.html">Nhạc Việt Mới</a></li>
+                <li><a  href="/chu-de/Nhac-Hot/IWZ9Z0C8.html">Nhạc Hot</a></li>
+                <li><a  href="/chu-de/Nhac-Viet-Moi/IWZ9Z0ED.html">Nhạc Việt Mới</a></li>
               </ul>
             </div>
           </div>
@@ -141,7 +63,7 @@
 
         </div>
       </li>
-      <li><a title="Album" href="/albums">Album</a>
+      <li><a title="Albums" href="/albums">Albums</a>
         <div class="megamenu submenu menu-col-4">
           <div class="subcol menu-col-1">
             <div class="title-menu"><a href="/the-loai-album/Viet-Nam/IWZ9Z08I.html" title="Việt Nam">Việt Nam</a></div>
@@ -156,7 +78,7 @@
           </div>
         </div>
       </li>
-      <li><a title="Nghệ Sĩ" href="/artists">Nghệ Sĩ</a>
+      <li><a title="Artists" href="/artists">Artists</a>
         <div class="megamenu submenu menu-col-1">
           <div class="subcol menu-col-1-narrow">
             <div class="subinner_item">
@@ -169,7 +91,7 @@
           <!--End .sub-col -->
         </div>
       </li>
-      <li><a title="Bảng Xếp Hạng" href="/bang-xep-hang/index.html">BXH</a>
+      <li><a title="Charts" href="/bang-xep-hang/index.html">Charts</a>
         <div class="megamenu submenu menu-col-3 menu-bxh">
           <div class="subcol menu-col-1-narrow">
             <div class="title-menu">Việt Nam</div>

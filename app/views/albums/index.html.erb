@@ -1,22 +1,65 @@
-<div class="container-fluid">
-  <br>
-  <div class="div-right container">
-    <div class="row">
-      <h2 style="color: #777777" id="album"><%= link_to "Albums" %></h2>
-      <% @albums.each do |album| %>
-        <div class="col-sm-3">
-          <a href="<%= album_path(album) %>">
-            <div class="well div-item">
-              <% if album.avatar? %>
-                <%= image_tag album.avatar.url %>
-              <% else %>
-                <%= image_tag "https://thumb1.shutterstock.com/display_pic_with_logo/2505571/450617644/stock-vector-cool-avatar-black-rap-singer-modern-simple-and-clear-design-vector-icon-in-flat-style-450617644.jpg" %>
+<div class="wrapper-page" style="margin: 0 auto;padding: 15px 12px 0;">
+  <div class="wrap-2-col">
+    <div class="sidebar fn-sidebar-fixed">
+      <ul class="data-list">
+        <li class="active">
+          <h3><a href="">Hot Album</a></h3>
+        </li>
+      </ul>
+      <div class="fn-scrollbar mCustomScrollbar _mCS_1 mCS-autoHide">
+        <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_outside" tabindex="0">
+          <div id="mCSB_1_container" class="mCSB_container" style="position: relative; left: 0px; top: 0px;" dir="ltr">
+            <ul class="data-list">
+              <% @music_types = Artist.type_of_musics.keys %>
+              <% @music_types.each do |type| %>
+                <li class="">
+                  <a href="#">
+                    <%= type %>
+                  </a>
+                </li>
               <% end %>
-            </div>
-            <h4><%= album.name %></h4>
-          </a>
+            </ul>
+          </div>
         </div>
-      <% end %>
+      </div>
+    </div>
+    <div class="zcontent">
+      <h2 class="title-section">
+        <p href="#">Albums
+          <i class="icon-arrow"></i></p>
+      </h2>
+      <div class="tab-pane">
+
+        <div class="row">
+          <% @albums.each do |album| %>
+            <% @singer = Artist.find album.songs.first.singer_id %>
+            <div class="pone-of-four">
+              <div class="item">
+                <a href="<%= album_path(album) %>">
+                  <% if album.avatar? %>
+                    <%= image_tag album.avatar.url %>
+                  <% else %>
+                    <%= image_tag "https://thumb1.shutterstock.com/display_pic_with_logo/2505571/450617644/stock-vector-cool-avatar-black-rap-singer-modern-simple-and-clear-design-vector-icon-in-flat-style-450617644.jpg" %>
+                  <% end %>
+                  <span class="icon-circle-play otr"></span>
+                </a>
+              </div>
+              <div class="description">
+                <h4 class="title-item ellipsis">
+                  <a href="<%= album_path(album) %>"><%= album.name %></a>
+                </h4>
+                <div class="inblock ellipsis">
+                  <a href="/artists/<%= @singer.id %>">
+                    <h5 class="title-sd-item">
+                      <%= @singer.name %>
+                    </h5>
+                  </a>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
