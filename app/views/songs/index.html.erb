@@ -1,32 +1,22 @@
-<div class="container-fluid">
-  <div class="col-sm-2 sidenav hidden-xs">
-    <img src="http://dxta.github.io/img/about/framgia.png" alt=""
-    style="width: 100%">
-    <ul class="nav nav-pills nav-stacked">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="/albums">Albums</a></li>
-      <li><a href="/songs">Songs</a></li>
-      <li><%= link_to current_user.name, user_path(current_user) %></li>
-      <li><%= link_to "Logout",
-        destroy_user_session_path, method: :delete %></li>
-    </ul>
-    <br>
-  </div>
-  <br>
-  <div class="col-sm-10 div-right">
-    <div class="row">
+<div class="wrapper-page">
+  <div class="div-right">
+    <div class="row"style="margin: 0">
       <h2 style="color: #777777" id="song"><%= link_to "Songs" %></h2>
       <% @songs.each do |song| %>
+        <% @singer = Artist.find(song.singer_id) %>
         <div class="col-sm-3">
           <a href="<%= song_path(song) %>">
             <div class="well div-item">
-              <%# if song.avatar? %>
-                <%#= image_tag album.avatar.url %>
-              <%# else %>
+              <% if @singer.avatar? %>
+                <%= image_tag @singer.avatar.url %>
+              <% else %>
                 <%= image_tag "https://thumb1.shutterstock.com/display_pic_with_logo/2505571/450617644/stock-vector-cool-avatar-black-rap-singer-modern-simple-and-clear-design-vector-icon-in-flat-style-450617644.jpg" %>
-              <%# end %>
+              <% end %>
             </div>
             <h4><%= song.name %></h4>
+          </a>
+          <a href="/artists/<%= @singer.id %>">
+            <h5 style="text-align: center"><%= @singer.name %></h5>
           </a>
         </div>
       <% end %>

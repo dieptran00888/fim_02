@@ -6,11 +6,15 @@
       </a>
     </div>
     <div id="sug" class="section-search">
-      <form action="/tim-kiem/bai-hat.html" method="get" class="search">
-        <input type="text" name="q" placeholder="Search..." class="input-txt"
-        autocomplete="off">
-        <span class="input-btn"> <button type="submit" class="zicon btn hide-text">Search</button> </span>
-      </form>
+      <%= search_form_for @search, class:"search" do |f| %>
+        <%= f.text_field :name_cont, class: "input-txt", placeholder:"Search..." %>
+        <span class="input-btn"><%= f.submit class: "zicon btn hide-text" %></span>
+      <% end %>
+      <!--<form action="/tim-kiem/bai-hat.html" method="get" class="search">-->
+        <!--<input type="text" name="q" placeholder="Search..." class="input-txt"-->
+        <!--autocomplete="off">-->
+        <!--<span class="input-btn"> <button type="submit" class="zicon btn hide-text">Search</button> </span>-->
+      <!--</form>-->
     </div>
     <div class="nav-account pull-right fn-guestbox">
       <% if user_signed_in? %>
@@ -22,7 +26,7 @@
         <span class="slash">/</span>
         <%= link_to t(".link_signup"), new_user_registration_path %>
       <% end %>
-      </div>
+    </div>
   </div>
 </header>
 
@@ -36,9 +40,12 @@
           <div class="subcol menu-col-1-narrow">
             <div class="subinner_item">
               <ul>
-                <li><a href="/u/" title="Kênh của tôi" class="fn-my-channel">Kênh của tôi</a></li>
-                <li><a href="/mymusic/myplaylist" title="Playlist cá nhân">Playlist Cá Nhân</a></li>
-                <li><a href="/mymusic/favorites-song" title="Yêu thích">Yêu Thích</a></li>
+                <li><a href="/u/" title="Kênh của tôi" class="fn-my-channel">Kênh
+                  của tôi</a></li>
+                <li><a href="/mymusic/myplaylist" title="Playlist cá nhân">Playlist
+                  Cá Nhân</a></li>
+                <li><a href="/mymusic/favorites-song" title="Yêu thích">Yêu
+                  Thích</a></li>
               </ul>
             </div>
           </div>
@@ -50,11 +57,12 @@
       <li><a href="#">Categories</a>
         <div class="megamenu submenu menu-col-4">
           <div class="subcol menu-col-1">
-            <div class="title-menu"><a href="#" >Nổi Bật</a></div>
+            <div class="title-menu"><a href="#">Nổi Bật</a></div>
             <div class="subinner_item">
               <ul>
-                <li><a  href="/chu-de/Nhac-Hot/IWZ9Z0C8.html">Nhạc Hot</a></li>
-                <li><a  href="/chu-de/Nhac-Viet-Moi/IWZ9Z0ED.html">Nhạc Việt Mới</a></li>
+                <li><a href="/chu-de/Nhac-Hot/IWZ9Z0C8.html">Nhạc Hot</a></li>
+                <li><a href="/chu-de/Nhac-Viet-Moi/IWZ9Z0ED.html">Nhạc Việt
+                  Mới</a></li>
               </ul>
             </div>
           </div>
@@ -66,13 +74,23 @@
       <li><a title="Albums" href="/albums">Albums</a>
         <div class="megamenu submenu menu-col-4">
           <div class="subcol menu-col-1">
-            <div class="title-menu"><a href="/the-loai-album/Viet-Nam/IWZ9Z08I.html" title="Việt Nam">Việt Nam</a></div>
+            <div class="title-menu">
+              <a href="/the-loai-album/Viet-Nam/IWZ9Z08I.html" title="Việt Nam">Việt
+                Nam</a></div>
             <div class="subinner_item">
               <ul>
-                <li><a title="Nhạc Trẻ" href="/the-loai-album/Nhac-Tre/IWZ9Z088.html">Nhạc Trẻ</a></li>
-                <li><a title="Nhạc Trữ Tình" href="/the-loai-album/Nhac-Tru-Tinh/IWZ9Z08B.html">Nhạc Trữ Tình</a></li>
-                <li><a title="Rock Việt" href="/the-loai-album/Rock-Viet/IWZ9Z08A.html">Rock Việt</a></li>
-                <li><a title="Nhạc Trịnh" href="/the-loai-album/Nhac-Trinh/IWZ9Z08E.html">Nhạc Trịnh</a></li>
+                <li>
+                  <a title="Nhạc Trẻ" href="/the-loai-album/Nhac-Tre/IWZ9Z088.html">Nhạc
+                    Trẻ</a></li>
+                <li>
+                  <a title="Nhạc Trữ Tình" href="/the-loai-album/Nhac-Tru-Tinh/IWZ9Z08B.html">Nhạc
+                    Trữ Tình</a></li>
+                <li>
+                  <a title="Rock Việt" href="/the-loai-album/Rock-Viet/IWZ9Z08A.html">Rock
+                    Việt</a></li>
+                <li>
+                  <a title="Nhạc Trịnh" href="/the-loai-album/Nhac-Trinh/IWZ9Z08E.html">Nhạc
+                    Trịnh</a></li>
               </ul>
             </div>
           </div>
@@ -83,8 +101,12 @@
           <div class="subcol menu-col-1-narrow">
             <div class="subinner_item">
               <ul>
-                <li><a title="Việt Nam" href="/the-loai-nghe-si/Viet-Nam/IWZ9Z08I.html">Việt Nam</a></li>
-                <li><a title="Âu Mỹ" href="/the-loai-nghe-si/Au-My/IWZ9Z08O.html">Âu Mỹ</a></li>
+                <li>
+                  <a title="Việt Nam" href="/the-loai-nghe-si/Viet-Nam/IWZ9Z08I.html">Việt
+                    Nam</a></li>
+                <li>
+                  <a title="Âu Mỹ" href="/the-loai-nghe-si/Au-My/IWZ9Z08O.html">Âu
+                    Mỹ</a></li>
               </ul>
             </div>
           </div>
@@ -97,8 +119,12 @@
             <div class="title-menu">Việt Nam</div>
             <div class="subinner_item">
               <ul>
-                <li><a title="Bài Hát" href="/bang-xep-hang/bai-hat-Viet-Nam/IWZ9Z08I.html">Bài hát</a></li>
-                <li><a title="Album" href="/bang-xep-hang/album-Viet-Nam/IWZ9Z08O.html">Album</a></li>
+                <li>
+                  <a title="Bài Hát" href="/bang-xep-hang/bai-hat-Viet-Nam/IWZ9Z08I.html">Bài
+                    hát</a></li>
+                <li>
+                  <a title="Album" href="/bang-xep-hang/album-Viet-Nam/IWZ9Z08O.html">Album</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -107,8 +133,12 @@
             <div class="title-menu">Âu Mỹ</div>
             <div class="subinner_item">
               <ul>
-                <li><a title="Bài Hát" href="/bang-xep-hang/bai-hat-Au-My/IWZ9Z0BW.html">Bài hát</a></li>
-                <li><a title="Album" href="/bang-xep-hang/album-Au-My/IWZ9Z0B6.html">Album</a></li>
+                <li>
+                  <a title="Bài Hát" href="/bang-xep-hang/bai-hat-Au-My/IWZ9Z0BW.html">Bài
+                    hát</a></li>
+                <li>
+                  <a title="Album" href="/bang-xep-hang/album-Au-My/IWZ9Z0B6.html">Album</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -120,8 +150,10 @@
           <div class="subcol menu-col-1-narrow">
             <div class="subinner_item">
               <ul>
-                <li><a title="Việt Nam" href="/top100/Nhac-Tre/IWZ9Z088.html">Việt Nam</a></li>
-                <li><a title="Âu Mỹ" href="/top100/Pop/IWZ9Z097.html">Âu Mỹ</a></li>
+                <li><a title="Việt Nam" href="/top100/Nhac-Tre/IWZ9Z088.html">Việt
+                  Nam</a></li>
+                <li><a title="Âu Mỹ" href="/top100/Pop/IWZ9Z097.html">Âu Mỹ</a>
+                </li>
               </ul>
             </div>
           </div>
