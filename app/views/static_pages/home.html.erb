@@ -22,8 +22,9 @@
       </div>
       <div id="albumHot" class="section" style="float: left">
         <h2 class="title-section has-link" style="overflow: hidden">
-          <a href="" style="float: left; text-transform: uppercase; color: #004d40 ">Album
-            hot</a>
+          <p href="" style="float: left; text-transform: uppercase; color:
+            #004d40 ">Album
+            hot</p>
         </h2>
         <% @albums.each do |album| %>
           <% @singer = Artist.find album.songs.first.singer_id %>

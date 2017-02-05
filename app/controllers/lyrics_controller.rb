@@ -3,6 +3,8 @@ class LyricsController < ApplicationController
 
   def new
     @lyric = @song.lyrics.build
+    @search = nil
+    render layout: false
   end
 
   def create

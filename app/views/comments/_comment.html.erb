@@ -1,22 +1,25 @@
-<li id="comment-item-<%= comment.id %>">
+<li class="item-comment fn-page fn-page1" id="comment-item-<%= comment.id %>">
   <small>
     <p><%= comment.user.name %></p>
-    <%= time_ago_in_words(comment.created_at) + t(".ago") %>
+    <p style="float: right"><%= time_ago_in_words(comment.created_at) + t(".ago")
+    %></p>
   </small>
   <blockquote>
     <p><%= comment.content %></p>
   </blockquote>
   <% if comment.root? %>
     <!--<p style="float: left">-->
-      <%#= link_to t(".reply"), new_polymorphic_path([@commentable, comment],
+    <%#= link_to t(".reply"), new_polymorphic_path([@commentable, comment],
         parent_id: comment.id), class: "button-reply", remote: true %>
     <!--</p>-->
 
     <!--<div class="reply">-->
-      <%#= render "comments/form", parent_id: comment.id %>
+    <%#= render "comments/form", parent_id: comment.id %>
     <!--</div>-->
   <% end %>
-  <div style="margin-bottom: 30px"><%= link_to t(".delete"),
-    polymorphic_path([@commentable, comment]), method: :delete, remote: true %>
-  </div>
+  <% if comment.user == current_user %>
+    <div style=" float:right;"><%= link_to t(".delete"),
+      polymorphic_path([@commentable, comment]), method: :delete, remote: true %>
+    </div>
+  <% end %>
 </li>
