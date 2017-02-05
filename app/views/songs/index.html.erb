@@ -1,6 +1,5 @@
 <div class="wrapper-page">
-  <div class="div-right">
-    <div class="row"style="margin: 0">
+    <div class="row" style="margin: 0; float: none">
       <h2 style="color: #777777" id="song"><%= link_to "Songs" %></h2>
       <% @songs.each do |song| %>
         <% @singer = Artist.find(song.singer_id) %>
@@ -21,5 +20,4 @@
         </div>
       <% end %>
     </div>
-  </div>
 </div>

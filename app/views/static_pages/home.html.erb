@@ -66,31 +66,38 @@
       <div class="widget widget-tab">
         <h2 style="color: #004d40;">Chart songs</h2>
         <ul class="tab-nav">
-          <!--<li><a href="">Viet Nam</a></li>-->
         </ul>
         <div class="tab-pane widget-song-countdown">
           <% index = 1 %>
+          <% arr = [] %>
+          <% arr_sort = [] %>
           <% @songs.each do |song| %>
             <% if song.impressionist_count > 5 %>
-              <% @singer = Artist.find(song.singer_id) %>
-              <ul class="fn-list">
-                <li class="fn-item fn-song">
-                  <span class="rank rank-2 fn-order"></span>
-                  <a href="/songs/<%= song.id %>">
-                    <h4 class="song-name"><%= (index) %>- <%= song.name %></h4>
-                  </a>
-                  <div class="inblock singer-name ellipsis fn-artist_list">
-                    <a href="/artists/<%= @singer.id %>">
-                      <h5 class="txt-info fn-artist"><%= @singer.name %></h5>
-                    </a>
-                  </div>
-                  <i class="txt-info pull-right view-stas fn-score fn-number">
-                    <%= song.impressionist_count %>
-                    <% index = index+1 %>
-                  </i>
-                </li>
-              </ul>
+              <%# @singer = Artist.find(song.singer_id) %>
+              <% arr.push({song: song, view: song.impressionist_count}) %>
             <% end %>
+          <% end %>
+          <% arr_sort = arr.sort_by{|k| k["view"]} %>
+          <% arr_sort.each do |item| %>
+            <% @singer = Artist.find(item[:song].singer_id) %>
+            <ul class="fn-list">
+              <li class="fn-item fn-song">
+                <span class="rank rank-2 fn-order"></span>
+                <a href="/songs/<%= item[:song].id %>">
+                  <h4 class="song-name"><%= (index) %>- <%= item[:song].name
+                  %></h4>
+                </a>
+                <div class="inblock singer-name ellipsis fn-artist_list">
+                  <a href="/artists/<%= @singer.id %>">
+                    <h5 class="txt-info fn-artist"><%= @singer.name %></h5>
+                  </a>
+                </div>
+                <i class="txt-info pull-right view-stas fn-score fn-number">
+                  <%= item[:view] %>
+                  <% index = index+1 %>
+                </i>
+              </li>
+            </ul>
           <% end %>
         </div>
       </div>

@@ -7,6 +7,7 @@
         <div class="panel-title"><h1><%= t "sessions.new.title" %></h1></div>
       </div>
       <div class="panel-body" >
+        <% @search = User.search params[:q] %>
         <%= form_for resource, as: resource_name,
           url: session_path(resource_name),
           html: {class: "form-horizontal", role: "form"} do |f| %>

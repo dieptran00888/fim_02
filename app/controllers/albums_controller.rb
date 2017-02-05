@@ -6,8 +6,8 @@ class AlbumsController < ApplicationController
   before_action :album_support, only: :show
 
   def index
-    @albums = Album.order_rate.paginate page: params[:page],
-      per_page: Settings.per_page
+    @search = Album.search params[:q]
+    @albums = @search.result
   end
 
   def new

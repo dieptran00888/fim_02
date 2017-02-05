@@ -5,6 +5,7 @@
     <div class="panel panel-info">
       <div class="panel-heading">
         <div class="panel-title"><h1><strong>
+          <% @search = User.search params[:q] %>
           <%= t "signup.sign_up" %></strong></h1></div>
         <div id="signin-button">
           <% unless controller_name == "sessions" %>

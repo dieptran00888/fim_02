@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :index] do
     member do
-      resources :albums, only: [:new, :create]
+      # resources :albums, only: [:new, :create]
     end
   end
   resources :artists, only: [:index, :show]
