@@ -2,6 +2,7 @@
   10px rgba(0, 0, 0, 0.5)">
   <div class="col-md-8">
     <div style="margin-top: 45px">
+      <% @search = Song.search params[:q] %>
       <% @singer = Artist.find(@song.singer_id) %>
         <div class="avatar">
           <img src="https://thumb1.shutterstock.com/display_pic_with_logo/2505571/450617644/stock-vector-cool-avatar-black-rap-singer-modern-simple-and-clear-design-vector-icon-in-flat-style-450617644.jpg" alt="">

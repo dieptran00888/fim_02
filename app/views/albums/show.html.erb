@@ -2,6 +2,7 @@
   10px rgba(0, 0, 0, 0.5)">
   <div class="col-md-8">
     <div class="" style="margin-top: 20px; margin-left: 15px">
+      <% @search = Album.search params[:q] %>
       <% if @album.avatar? %>
         <div class="avatar"><%= image_tag @album.avatar.url %></div>
       <% else %>

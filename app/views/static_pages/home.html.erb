@@ -73,18 +73,17 @@
           <% arr_sort = [] %>
           <% @songs.each do |song| %>
             <% if song.impressionist_count > 5 %>
-              <%# @singer = Artist.find(song.singer_id) %>
-              <% arr.push({song: song, view: song.impressionist_count}) %>
+              <% arr.push([[song.impressionist_count], [song]]) %>
             <% end %>
           <% end %>
-          <% arr_sort = arr.sort_by{|k| k["view"]} %>
+          <% arr_sort = arr.sort.reverse %>
           <% arr_sort.each do |item| %>
-            <% @singer = Artist.find(item[:song].singer_id) %>
+            <% @singer = Artist.find(item[1].first.singer_id) %>
             <ul class="fn-list">
               <li class="fn-item fn-song">
                 <span class="rank rank-2 fn-order"></span>
-                <a href="/songs/<%= item[:song].id %>">
-                  <h4 class="song-name"><%= (index) %>- <%= item[:song].name
+                <a href="/songs/<%= item[1].first.id %>">
+                  <h4 class="song-name"><%= (index) %>- <%= item[1].first.name
                   %></h4>
                 </a>
                 <div class="inblock singer-name ellipsis fn-artist_list">
@@ -93,7 +92,7 @@
                   </a>
                 </div>
                 <i class="txt-info pull-right view-stas fn-score fn-number">
-                  <%= item[:view] %>
+                  <%= item[0].first %>
                   <% index = index+1 %>
                 </i>
               </li>
