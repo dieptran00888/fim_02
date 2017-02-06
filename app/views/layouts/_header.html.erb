@@ -29,24 +29,12 @@
   <div class="container">
     <ul class="main-nav group">
       <li class="home"><a href="/">Framusic</a></li>
+      <% if user_signed_in? %>
 
-      <li class="active"><a class="fn-login" href="<%= user_path(current_user) %>">Personal
-        Music</a>
-        <div class="megamenu submenu menu-col-1 fn-userbox">
-          <div class="subcol menu-col-1-narrow">
-            <div class="subinner_item">
-              <ul>
-                <li><a href="/u/" title="Kênh của tôi" class="fn-my-channel">Kênh
-                  của tôi</a></li>
-                <li><a href="/mymusic/myplaylist" title="Playlist cá nhân">Playlist
-                  Cá Nhân</a></li>
-                <li><a href="/mymusic/favorites-song" title="Yêu thích">Yêu
-                  Thích</a></li>
-              </ul>
-            </div>
-          </div>
-          <!--End .sub-col -->
-        </div>
+        <li class="active">
+          <a class="fn-login" href="<%= user_path(current_user) %>">Personal
+            Music</a>
+      <% end %>
       </li>
 
       <li class="separation"></li>
