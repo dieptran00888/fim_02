@@ -6,7 +6,7 @@
         <% @search = Song.search params[:q] %>
         <% @singer = Artist.find(@song.singer_id) %>
         <div class="avatar">
-          <img src="https://thumb1.shutterstock.com/display_pic_with_logo/2505571/450617644/stock-vector-cool-avatar-black-rap-singer-modern-simple-and-clear-design-vector-icon-in-flat-style-450617644.jpg" alt="">
+          <img src="http://previews.123rf.com/images/rastudio/rastudio1503/rastudio150300097/37220795-The-hipster-with-a-beard-is-listenning-to-music-Fun-avatar-concept-Vector-flat-design-illustration--Stock-Vector.jpg" alt="">
         </div>
         <div class="title-song" style="float: left;padding-left: 50px;">
           <h3><%= @song.name %></h3>
@@ -16,7 +16,7 @@
       </div>
       <div class="panel panel-default" style="margin-top: 250px;">
         <div class="panel-body" style="padding-top: 10px;
-          background-image: url('http://www.playinmusic.com/images/graphic-top-banner.jpg')">
+          background-image: url('http://www.freewebheaders.com/wordpress/wp-content/gallery/christmas/xmas-balls-on-red-background-header.jpg')">
           <div class="audio-player" style="width: 98%; padding-top: 130px;">
             <img class="cover" src="" alt="">
             <audio id="audio-player" src="<%= @song.url_content %>"
@@ -90,7 +90,7 @@
                       <% if album.avatar? %>
                         <%= image_tag album.avatar.url %>
                       <% else %>
-                        <%= image_tag "https://thumb1.shutterstock.com/display_pic_with_logo/2505571/450617644/stock-vector-cool-avatar-black-rap-singer-modern-simple-and-clear-design-vector-icon-in-flat-style-450617644.jpg" %>
+                        <%= image_tag "http://previews.123rf.com/images/rastudio/rastudio1503/rastudio150300097/37220795-The-hipster-with-a-beard-is-listenning-to-music-Fun-avatar-concept-Vector-flat-design-illustration--Stock-Vector.jpg" %>
                       <% end %>
                       <span class="icon-circle-play otr"></span>
                     </a>

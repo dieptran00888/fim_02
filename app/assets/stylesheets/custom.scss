@@ -876,3 +876,50 @@ blockquote {
   position: relative;
   min-height: 41px
 }
+
+.pone-of-four .icon-circle-play.otr, .album-item .icon-circle-play.otr, .thumb .icon-circle-follow.otr {
+  margin: -55px 0 0 -30px;
+}
+.pone-of-four .icon-circle-play, .album-item .icon-circle-play, .thumb .icon-circle-follow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -25px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transform: scale(0);
+}
+.pone-of-four img, .pone-of-four .icon-circle-play, .album-item .icon-circle-play, .thumb .icon-circle-follow {
+  transition: all .3s ease-in;
+}
+.icon-circle-play {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-position: 0 -160px;
+}
+.icon-circle-play, .icon-circle-follow, .social-sq li, .statistics i, .tool-song .i25>a, .table-list .play-all .icon-play, .icon-down, .icon-heart, .icon-calendar, .w-nav, .icon-headphone, .show-more i, .item-service i, .func-share i, .subcribe a span, .func-display .icon-grid, .func-display .icon-list, .icon-line-play, .icon-line-play-light, .toggle-filter i, .panel-filter li i, .title-section .icon-arrow, .hot-news-bar span .icon-info, .icon-play-all, .direction-slide-2 a span, .icon-huheart, .icon-ztv, .icon-s-arrow, .button-follow, .icon-radio, .button-style-1 i, .icon-playlist, .close, .icon-big-check, .icon-big-exit, .fix-button b, .icon-headphone-1, .icon-pause-1, .icon-cart, .icon-gift, .nav-caro span, .icon-arrow-left-1, .icon-arrow-right-1, .icon-hand-like, .icon-hand-unlike, .icon-round-song, .icon-round-album, .icon-round-video, .icon-arrow, .icon-add, .icon-remove, .icon-remove-1, .icon-playlist-1, .icon-play-1 {
+  background-image: url(http://static.mp3.zdn.vn/skins/zmp3-v4.2/images/icon.png);
+  background-repeat: no-repeat;
+}
+
+.pone-of-four:hover .icon-circle-play {
+  z-index: 4;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.pone-of-four:hover img {
+  opacity: 0.9 !important;
+}
+
+.album-item:hover .icon-circle-play {
+  z-index: 4;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.album-item:hover img {
+  opacity: 0.9!important;
+}
+
