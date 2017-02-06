@@ -13,11 +13,8 @@ Rails.application.routes.draw do
     resources :dashboard, only: :index
     resources :lyrics, only: [:index, :update, :destroy]
   end
-  resources :users, only: [:show, :index] do
-    member do
-      resources :albums, only: [:new, :create]
-    end
-  end
+  resources :users, only: [:show, :index]
+
   resources :artists, only: [:index, :show]
   resources :songs, only: [:show, :index] do
     resources :comments
@@ -30,4 +27,5 @@ Rails.application.routes.draw do
   end
   resources :marks, only: [:new, :create, :update]
   resources :users, only: [:index, :show]
+  resources :categories, only: :index
 end

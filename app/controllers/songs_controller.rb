@@ -13,10 +13,12 @@ class SongsController < ApplicationController
     @comment = current_user.comments.new
     @mark = Mark.find_or_create_by user_id: current_user.id, song_id: params[:id]
     impressionist @song
+    @song.update_attributes(views: @song.impressionist_count)
   end
 
   private
   def song_support
     @support = Supports::SongSupport.new @song
   end
+
 end

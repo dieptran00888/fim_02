@@ -1,2 +1,85 @@
-<% provide :title, t(".title") %>
-<p><%= t ".content" %></p>
+<div class="wrapper-page">
+  <div class="wrap-body">
+    <div class="wrap-content">
+      <div id="feature" class="slide fn-slide-show">
+        <div class="slide-body non-opacity">
+          <div class="slick-track">
+            <%= image_tag "https://goo.gl/v99Kd0" %>
+          </div>
+        </div>
+        <div class="slide-thumb">
+          <ul>
+            <li><%= image_tag "https://goo.gl/jgdgAq" %></li>
+            <li><%= image_tag "https://goo.gl/iUFvVB" %></li>
+            <li><%= image_tag "https://goo.gl/ThJzWw" %></li>
+            <li><%= image_tag "https://goo.gl/GoKP0c" %></li>
+            <li><%= image_tag "https://goo.gl/tLnWIr" %></li>
+          </ul>
+        </div>
+      </div>
+      <div id="albumHot" class="section">
+        <h2 class="title-section has-link">
+          <p><%= t ".hot_album" %></p>
+        </h2>
+        <% @albums.each do |album| %>
+          <div class="row item-album">
+            <div class="album-item des-inside otr col-4">
+              <div class="item">
+                <%= link_to album_path(album) do %>
+                  <% if album.avatar? %>
+                    <%= image_tag album.avatar.url %>
+                  <% else %>
+                    <%= image_tag "https://goo.gl/MHRrhY" %>
+                  <% end %>
+                <% end %>
+                <span class="icon-circle-play otr"></span>
+              </div>
+              <div class="des">
+                <h4 class="title-item txt-primary ellipsis">
+                  <%= link_to album.name, album_path(album) %>
+                </h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+    <div class="wrap-sidebar">
+      <div id="topic-hot" class="widget widget-cate">
+        <ul class="clearfix">
+          <li>
+            <%= image_tag "https://goo.gl/mcn4lc", class: "img-responsive" %>
+          </li>
+          <li>
+            <%= image_tag "https://goo.gl/bb5JId", class: "img-responsive" %>
+          </li>
+          <li>
+            <%= image_tag "https://goo.gl/2XxTdX", class: "img-responsive" %>
+          </li>
+          <li>
+            <%= image_tag "https://goo.gl/PYc9PY", class: "img-responsive" %>
+          </li>
+        </ul>
+      </div>
+      <div class="widget widget-tab">
+        <h2><%= t ".chart_songs" %></h2>
+        <div class="tab-pane widget-song-countdown">
+          <% @songs.each_with_index do |song, index| %>
+            <ul class="fn-list">
+              <li class="fn-item fn-song">
+                <span class="rank rank-2 fn-order"><%= index+1 %></span>
+                <h4 class="song-name">
+                  <%= link_to song.name, song_path(song) %>
+                </h4>
+                <i class="txt-info pull-right view-stas fn-score fn-number">
+                  <%= song.views %>
+                </i>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

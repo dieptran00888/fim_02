@@ -35,15 +35,26 @@ en:
           balad: "Balad"
   layouts:
     header:
-      logo: "Framgia IMusic" 
+      logo: "FraMp3"
       link_home: "Home"
       link_login: "Login"
       link_signup: "Sign up"
       link_logout: "Logout"
+      search: "Search..."
+      personal_music: "Personal Music"
+      categories: "Categories"
+      albums: "Albums"
+      artists: "Artists"
     footer:
       name: "Framgia IMusic"     
       link_about: "About"
       link_contact: "Contact"
+      framgia_imusic: "Framgia Imusic"
+      introduction: "Introduction"
+      term: "Term"
+      copyright: "Copyright"
+      application: "Application"
+      contact: "Contact"
     admin:
       header:
         link_profile: "Profile"
@@ -66,6 +77,8 @@ en:
     home:
       title: "Home"
       content: "Home Page"
+      hot_album: "Hot Albums"
+      chart_songs: "Chart Songs"
     contact:
       title: "Contact"
       content: "Contact Page"

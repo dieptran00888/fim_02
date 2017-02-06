@@ -1,11 +1,27 @@
-<footer class="footer">
+<footer>
   <div class="container">
-    <small><%= t ".name" %></small>
-    <nav>
-      <ul>
-        <li><%= link_to t(".link_about"), "/static_pages/about" %></li>
-        <li><%= link_to t(".link_contact"), "/static_pages/contact" %></li>       
-      </ul>
-    </nav>
+    <div class="row">
+      <div class="col-4 copyright" itemscope=""
+        itemtype="http://schema.org/Organization">
+        <%= image_tag "http://laguaz.net/skins/zmp/images/logo-ft.png",
+          itemprop: "logo" %>
+        <p><%= t ".framgia_imusic" %></p></div>
+      <div class="col-5">
+        <ul class="link-footer">
+          <li>
+            <%= link_to t(".introduction"), "#" %>
+          </li>
+          <li>
+            <%= link_to t(".term"), "#" %>
+          </li>
+          <li>
+            <%= link_to t(".application"), "#" %>
+          </li>
+          <li>
+            <%= link_to t(".contact"), "#" %>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </footer>
