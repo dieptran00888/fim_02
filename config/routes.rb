@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   end
   resources :marks, only: [:new, :create, :update]
   resources :users, only: [:index, :show]
+  resources :categories, only: [:index, :show]
 end

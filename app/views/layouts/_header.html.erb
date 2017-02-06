@@ -5,14 +5,12 @@
         <img src="https://media.licdn.com/media/AAEAAQAAAAAAAAfeAAAAJGY4ODMyMTcwLTZmODYtNDgxMi1iMDc0LWYwZjQ2OWVlYWQ3Mg.png" style="height: 60px" />
       </a>
     </div>
-    <% if @search.present? %>
-      <div id="sug" class="section-search">
-        <%= search_form_for @search, class:"search" do |f| %>
-          <%= f.text_field :name_cont, class: "input-txt", placeholder:"Search..." %>
-          <span class="input-btn"><%= f.submit class: "zicon btn hide-text" %></span>
-        <% end %>
-      </div>
-    <% end %>
+    <div id="sug" class="section-search">
+      <%= search_form_for @search, class: "search" do |f| %>
+        <%= f.text_field :name_cont, class: "input-txt", placeholder: "Search..." %>
+        <span class="input-btn"><%= f.submit class: "zicon btn hide-text" %></span>
+      <% end %>
+    </div>
     <div class="nav-account pull-right fn-guestbox">
       <% if user_signed_in? %>
         <%= link_to t(".link_logout"),
@@ -51,7 +49,7 @@
       </li>
 
       <li class="separation"></li>
-      <li><a href="#">Categories</a>
+      <li><a href="/categories">Categories</a>
         <div class="megamenu submenu menu-col-4">
           <div class="subcol menu-col-1">
             <div class="title-menu"><a href="#">Nổi Bật</a></div>
@@ -104,38 +102,6 @@
                 <li>
                   <a title="Âu Mỹ" href="/the-loai-nghe-si/Au-My/IWZ9Z08O.html">Âu
                     Mỹ</a></li>
-              </ul>
-            </div>
-          </div>
-          <!--End .sub-col -->
-        </div>
-      </li>
-      <li><a title="Charts" href="/bang-xep-hang/index.html">Charts</a>
-        <div class="megamenu submenu menu-col-3 menu-bxh">
-          <div class="subcol menu-col-1-narrow">
-            <div class="title-menu">Việt Nam</div>
-            <div class="subinner_item">
-              <ul>
-                <li>
-                  <a title="Bài Hát" href="/bang-xep-hang/bai-hat-Viet-Nam/IWZ9Z08I.html">Bài
-                    hát</a></li>
-                <li>
-                  <a title="Album" href="/bang-xep-hang/album-Viet-Nam/IWZ9Z08O.html">Album</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!--End .sub-col -->
-          <div class="subcol menu-col-1-narrow">
-            <div class="title-menu">Âu Mỹ</div>
-            <div class="subinner_item">
-              <ul>
-                <li>
-                  <a title="Bài Hát" href="/bang-xep-hang/bai-hat-Au-My/IWZ9Z0BW.html">Bài
-                    hát</a></li>
-                <li>
-                  <a title="Album" href="/bang-xep-hang/album-Au-My/IWZ9Z0B6.html">Album</a>
-                </li>
               </ul>
             </div>
           </div>
