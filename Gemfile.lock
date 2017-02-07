@@ -53,6 +53,7 @@ GEM
     bootstrap-will_paginate (0.0.10)
       will_paginate
     builder (3.2.2)
+    bxslider-rails (4.2.5.1)
     byebug (9.0.6)
     cancancan (1.15.0)
     capybara (2.11.0)
@@ -309,6 +310,7 @@ DEPENDENCIES
   bootstrap-datepicker-rails (>= 0.6.21)
   bootstrap-sass (= 3.3.6)
   bootstrap-will_paginate (= 0.0.10)
+  bxslider-rails
   byebug
   cancancan (~> 1.10)
   capybara

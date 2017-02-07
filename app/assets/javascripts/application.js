@@ -22,8 +22,13 @@
 //= require ratyrate
 //= require ckeditor/init
 //= require chosen-jquery
+//= require bxslider
 
 $(document).on('turbolinks:load', function () {
+  $('.bxslider').bxSlider({
+    auto: true,
+    autoControls: true
+  });
   $current = 1;
   $('.list-group-item').eq($current-1).css('background', 'wheat');
   $('.contribute-lyric').hide();
