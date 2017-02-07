@@ -18,8 +18,4 @@ class StaticPagesController < ApplicationController
     File.exist? Pathname.new Rails.root + 
       "app/views/static_pages/#{params[:page]}.html.erb"
   end
-
-  def charts_song
-    @songs = Song.order(views: :desc).limit 5
-  end
 end

@@ -1,64 +1,121 @@
-<div class="row">
-  <div class="col-md-4">
-    <h3><%= @song.name %></h3>
-  </div>
-  <div class="col-md-8">
-    <div class="audio-player">
-      <img class="cover" src="" alt="">
-      <audio id="audio-player" src="<%= @song.url_content %>"
-        type="audio/mp3" controls="controls"></audio>
-        <%= t ".views" %>
-        <%= @song.impressionist_count %><br/>
-        <%= t "user.share" %>
-        <%= social_share_button_tag @song.name %>
-    </div>
-  </div>
-</div>
-<h3><%= t ".lyrics" %></h3>
-
-<div class="lyrics-content">
-  <ul class="nav nav-tabs">
-    <% @song.lyrics.each_with_index do |lyric, index| %>
-      <% if lyric.approved? %>
-        <li class="<%= "active" if index == 0 %>">
-          <a data-toggle="tab" href="#lyric_<%= lyric.id %>">
-            <%= t(".version") + "#{index+1}" %>
-          </a>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-  <div class="tab-content">
-    <% @song.lyrics.each_with_index do |lyric, index| %>
-      <% if lyric.approved? %>
-        <div id="lyric_<%= lyric.id %>"
-          class="tab-pane fade <%= "in active" if index == 0 %>">
-          <p><%= strip_tags(lyric.content) %></p>
+<div class="wrapper-page">
+  <div class="wrap-body group page-play-song container">
+    <div class="wrap-content">
+      <div>
+        <div class="avatar">
+          <%= image_tag "https://goo.gl/9L8aW7" %>
         </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+        <div class="title-song">
+          <h3><%= @song.name %></h3>
+          <p><%= link_to @song.artist.name, artist_path(@song.artist) %></p>
+          <p><%= t(".category", category_name: @song.category.name) %></p>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="audio-player">
+            <%= audio_tag @song.url_content, type: "audio/mp3",
+              controls: "controls", autoplay: "autoplay" %>
+          </div>
+        </div>
+      </div>
+      <p class="glyphicon glyphicon-headphones">
+        <%= @song.views %>
+      </p>
+      <%= render "marks/mark" %>
+      <%= render "marks/form_song_marks" %>
+      <div class="row lyrics">
+        <h3><%= t ".lyrics" %></h3>
+        <div class="lyrics-content">
+          <ul class="nav nav-tabs">
+            <% @song.lyrics.each_with_index do |lyric, index| %>
+              <% if lyric.approved? %>
+                <li class="<%= "active" if index == 0 %>">
+                  <%= link_to t(".version", version_index: index+1),
+                    ("#lyric_"+"#{lyric.id}"), data: {toggle: "tab"} %>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+          <div class="tab-content">
+            <% @song.lyrics.each_with_index do |lyric, index| %>
+              <% if lyric.approved? %>
+                <div id="lyric_<%= lyric.id %>"
+                class="tab-pane fade <%= "in active" if index == 0 %>">
+                  <p><%= strip_tags lyric.content %></p>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="contribute-lyric">
+            <%= link_to t(".lyric-contribute"), new_song_lyric_path(@song),
+              class: "button-contribute" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-2 large-4 columns">
+          <% if user_signed_in? %>
+            <%= rating_for @song, "evaluation",
+              disable_after_rate: true, imdb_avg: true, target: "#hintDiv",
+              targetText: t(".rate_this"), space: true, cancel_place: "right" %>
+            <div id="hintDiv"></div>
+          <% end %>
+        </div>
+      </div>
 
-<div class="contribute-lyric">
-  <%= link_to t(".lyric-contribute"), new_song_lyric_path(@song),
-    class: "button-contribute" %>
-</div>
-<%= render "comments/form", parent_id: nil %>
-<ul>
-  <% if @support.comments %>
-    <%= comments_tree_for @support.comments %>
-  <% end %>
-</ul>
-<div class="row">
-  <div class="small-2 large-4 columns">
-    <% if user_signed_in? %>
-      <%= rating_for @song, "evaluation",
-        disable_after_rate: true, imdb_avg: true, target: "#hintDiv",
-        targetText: t(".rate_this"), space: true, cancel_place: "right" %>
-      <div id="hintDiv"></div>
-    <% end %>
+      <div class="section po-r">
+        <h2 class="title-section"><%= t ".albums" %></h2>
+        <div class="row fn-list slick-initialized slick-slider">
+          <div class="row">
+            <% @albums.each do |album| %>
+              <% if album.songs.first.artist == @song.artist %>
+                <div class="pone-of-four">
+                  <div class="item">
+                    <%= link_to album_path(album) do %>
+                      <% if album.avatar? %>
+                        <%= image_tag album.avatar.url %>
+                      <% else %>
+                        <%= image_tag "https://goo.gl/ETxxCv" %>
+                      <% end %>
+                      <span class="icon-circle-play otr"></span>
+                    <% end %>
+                  </div>
+                  <div class="description">
+                    <h4 class="title-item ellipsis">
+                      <%= link_to album.name, album_path(album) %>
+                    </h4>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="div-comment">
+        <%= render "comments/form", parent_id: nil %>
+        <ul id="list-comment" class="list-comment">
+          <% if @support.comments %>
+            <%= comments_tree_for @support.comments %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <ul class="wrap-sidebar show-suggest">
+      <h3><%= t ".suggest" %></h3>
+      <% @songs.each do |song| %>
+        <% unless song == @song %>
+          <ul class="fn-list">
+            <li class="fn-item fn-song">
+              <h4 class="song-name">
+                <%= link_to song.name, song_path(song) %>
+              </h4>
+              <h5><%= link_to song.artist.name, artist_path(song.artist)%></h5>
+            </li>
+          </ul>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
 </div>
-<%= render "marks/mark" %>
-<%= render "marks/form_song_marks" %>

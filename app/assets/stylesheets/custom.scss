@@ -470,9 +470,12 @@ nav .main-nav .megamenu.submenu .subcol li {
 }
 
 .wrap-sidebar {
-  float: right;
   width: 300px;
   position: relative;
+  list-style: none;
+  float: right;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .album-item img {
@@ -480,16 +483,23 @@ nav .main-nav .megamenu.submenu .subcol li {
   height: 150px;
 }
 
+.lyrics-content {
+  background: #eaeaea;
+  box-shadow: 8px 12px 23px -14px rgba(0,0,0,1);
+  padding: 15px;
+}
+
 .row {
+  width: 100%;
+  margin: 20px 0;
   overflow: hidden;
-  margin-left: 50px;
   margin-bottom: 30px;
   float: left;
 }
 
 .album-item {
+  float: left;
   position: relative;
-  padding: 0 6px;
 }
 
 .wrap-body {
@@ -707,7 +717,7 @@ h5:hover {
   padding-left: 6px;
   padding-right: 6px;
   float: left;
-  width: 180px;
+  width: 150px;
 }
 
 .thumb {
@@ -851,6 +861,11 @@ footer .row {
 
 /* show album, song */
 
+.div-comment {
+  margin-top: 20px;
+  float:left;
+}
+
 .div-comment .new_comment {
   width: 100%;
   padding: 20px;
@@ -952,16 +967,22 @@ blockquote {
   display: none;
 }
 
+.po-r {
+  float: left;
+}
+
 .po-r, .fn-list {
   clear: both;
+  padding-top: 10px;
 }
 
 .section {
   float: left;
 }
 
-.has-link {
+.title-section.has-link {
   overflow: hidden;
+  width: 100%;
 }
 
 .has-link p {
@@ -975,6 +996,8 @@ blockquote {
 .item-album {
   margin: 0;
   padding: 0;
+  width: 150px;
+  margin: 0 6px;
 }
 
 .clearfix {
@@ -983,5 +1006,36 @@ blockquote {
 
 h2 {
   color: #004d40;
+  float:left;
 }
 
+.panel-body {
+  padding-top: 10px;
+  background-image: url(https://goo.gl/bkR7lK);
+}
+
+.title-song {
+  float: left;
+  padding-left: 50px;
+}
+
+.panel.panel-default {
+  margin-top: 180px;
+}
+
+.audio-player {
+  width: 98%;
+  padding-top: 130px;
+}
+
+.glyphicon-headphones {
+  float: right;
+}
+
+.btn-delete, .time-ago {
+  float: right;
+}
+
+.show-suggest {
+
+}
