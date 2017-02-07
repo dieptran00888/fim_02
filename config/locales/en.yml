@@ -248,7 +248,10 @@ en:
     show:
       lyrics: "Lyrics"
       lyric-contribute: "Contribute"
-      version: "Version "
+      version: "Version %{version_index}"
+      suggest: "Suggest"
+      albums: "Albums"
+      category: "Category: %{category_name}"
   lyrics:
     form:
       send: "Send"

@@ -10,6 +10,9 @@ class Song < ApplicationRecord
   has_many :album_songs
   has_many :albums, through: :album_songs
 
+  belongs_to :category
+  belongs_to :artist
+
   validates :name, presence: true
   validates :url_content, presence: true
   validates :composer_id, presence: true
