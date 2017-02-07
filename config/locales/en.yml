@@ -68,6 +68,7 @@ en:
         link_artists: "Artists"
         link_dashboard: "Dashboard"
         online: "Online"
+        link_lyrics: "Lyrics"
   base_title: "Framgia IMusic" 
   shared:
     error_messages:
@@ -252,6 +253,7 @@ en:
       suggest: "Suggest"
       albums: "Albums"
       category: "Category: %{category_name}"
+      rate_this: "Rate This"
   lyrics:
     form:
       send: "Send"
@@ -273,3 +275,9 @@ en:
     dear: "Dear %{name},"
     content: "We have to new album music. You update in my page"
     mailler_song: "A new album music"
+  albums:
+    show:
+      version: "Version %{version_index}"
+      contribute: "Contribute"
+      rate_this: "Rate This"
+      albums: "Other Albums"

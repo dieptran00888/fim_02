@@ -25,7 +25,10 @@
 
 $(document).on('turbolinks:load', function () {
   $current = 1;
-  $('.list-group-item').eq($current-1).css('background', 'wheat');
+  $('.list-group-item').eq($current-1).css('background', '#e9f3f7');
+  $('.rank_song').eq($current-1).css('background',
+    'url(https://goo.gl/uISsEd) center no-repeat');
+  $('.rank_song').eq($current-1).empty();
   $('.contribute-lyric').hide();
   $('.contribute-lyric').eq($current-1).show();
   $('.tabs-lyric').hide();
@@ -38,6 +41,8 @@ $(document).on('turbolinks:load', function () {
     $('.tabs-lyric').eq($current-1).hide();
     $('.tab-lyric-content').eq($current-1).hide();
     $('.list-group-item').eq($current-1).css('background', 'none');
+    $('.rank_song').eq($current-1).css('background', 'none');
+    $('.rank_song').eq($current-1).html($current);
     $('#audio-player').attr('src', nextSource());
   });
 
@@ -49,11 +54,26 @@ $(document).on('turbolinks:load', function () {
   $('.chosen-select').chosen();
   $('.chosen-container-single').css('width', '250px');
 
+  $('.icon-next').on('click', function () {
+    $('.list-group-item').eq($current-1).css('background', 'none');
+    $('.rank_song').eq($current-1).css('background', 'none');
+    $('.rank_song').eq($current-1).html($current);
+    $('#audio-player').attr('src', nextSource());
+    $('.contribute-lyric').eq($current-1).hide();
+  });
+
+  CKEDITOR.replace('#ckeditor_content');
 });
 
 function nextSource() {
+  if ($('.list-group-item').length <= $current){
+    location.reload();
+  }
   var src = $('.list-group').children().children().eq($current).attr('data');
-  $('.list-group-item').eq($current).css('background', 'wheat');
+  $('.list-group-item').eq($current).css('background', '#e9f3f7');
+  $('.rank_song').eq($current).css('background',
+    'url(https://goo.gl/uISsEd) center no-repeat');
+  $('.rank_song').eq($current).empty();
   $('.contribute-lyric').eq($current).show();
   $('.tabs-lyric').eq($current).show();
   $('.tab-lyric-content').eq($current).show();

@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   
   rescue_from ActiveRecord::RecordNotFound do
     flash[:danger] = t "controllers.application.flash_error"
-    redirect_to admin_users_path
+    redirect_to root_path
   end
 
   def charts_song
