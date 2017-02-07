@@ -1,26 +1,35 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to t(".logo"), root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t(".link_home"), root_path %></li>
-        <% if user_signed_in? %>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <%= current_user.name %><b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Settings", edit_user_registration_path %></li> 
-                <li class="divider"></li>
-                <li><%= link_to t(".link_logout"),
-                  destroy_user_session_path, method: :delete %></li>
-              </ul>
-            </li>
-        <% else %>
-          <li><%= link_to t(".link_login"), user_session_path %></li>
-          <li><%= link_to t(".link_signup"), new_user_registration_path %></li>
-        <% end %>  
-      </ul>
-    </nav>
+<header>
+  <div class="container group">
+    <div class="logo">
+      <%= link_to t(".logo"), root_path, id: "logo" %>
+    </div>
+
+    <div class="nav-account pull-right fn-guestbox">
+      <% if user_signed_in? %>
+        <%= link_to t(".link_logout"),
+          destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to t(".link_login"), user_session_path,
+          class: "fn-login" %>
+        <span class="slash">/</span>
+        <%= link_to t(".link_signup"), new_user_registration_path %>
+      <% end %>
+    </div>
   </div>
 </header>
+
+<nav>
+  <div class="container">
+    <ul class="main-nav group">
+      <% if user_signed_in? %>
+        <li class="active">
+          <%= link_to t(".personal_music"), user_path(current_user),
+            class: "fn-login" %>
+        </li>
+      <% end %>
+      <li><%= link_to t(".categories"), categories_path %></li>
+      <li><%= link_to t(".albums"), albums_path %></li>
+      <li><%= link_to t(".artists"), artists_path %></li>
+    </ul>
+  </div>
+</nav>
