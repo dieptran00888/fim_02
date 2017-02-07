@@ -7,19 +7,17 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @commentable.comments.build comment_params
-    if @comment.save
-      flash.now[:success] = t "flash.create_success"
-    else
-      flash[:danger] = @comment.errors.full_messages.join("/ ")
+    @comment.save
+    respond_to do |format|
+      format.html
+      format.js
     end
-    redirect_to @commentable
   end
 
   def destroy
-    @comment.destroy
-    flash[:success] = t "flash.destroy_success"
-    redirect_to :back
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

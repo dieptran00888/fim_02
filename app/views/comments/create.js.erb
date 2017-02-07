@@ -1,0 +1,8 @@
+if ($('form').children(('textarea')).val() != "")
+{
+  $('#list-comment').prepend('<%= j render @comment %>');
+  $('form').children(('textarea')).val('');
+}
+else{
+  alert("Can't be blank");
+}

@@ -1,4 +1,4 @@
-<li class="item-comment">
+<li class="item-comment fn-page fn-page1" id="comment-item-<%= comment.id %>">
   <small>
     <p><%= comment.user.name %></p>
     <p class="time-ago">
@@ -10,7 +10,7 @@
   </blockquote>
   <% if comment.user == current_user %>
     <div><%= link_to t(".delete"), polymorphic_path([@commentable, comment]),
-      method: :delete, class: "btn-delete" %>
+      method: :delete, class: "btn-delete", remote: true %>
     </div>
   <% end %>
 </li>
