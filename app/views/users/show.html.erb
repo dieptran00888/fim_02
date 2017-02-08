@@ -1,17 +1,19 @@
-<h1><%= t ".heading" %></h1>
-<div class="row">
-  <div class="col-md-4">
-    <div class="user-profile">
-      <h3><%= t ".user-info" %></h3>
-      <p></p>
-      <span class="glyphicon glyphicon-user"></span>
-      <%= @user.name %><br/>
-      <span class="glyphicon glyphicon-envelope"></span>
-      <%= @user.email %><br/>
-    </div>
-    <div class="user-action">
-      <span class="glyphicon glyphicon-cog"></span>
-      <%= link_to t(".edit-profile"), edit_user_registration_path %>
+<div class="wrapper-page">
+  <div class="wrap-body group  page-artist-genre container">
+    <div class="wrap-2-col">
+      <div class="sidebar no-fixed">
+        <ul class="data-list">
+          <li class="profile-row">
+            <%= link_to @user.name, edit_user_registration_path, class:
+              "ellipsis" %>
+          </li>
+          <li><p><%= t ".favorite" %></p></li>
+        </ul>
+      </div>
+      <div class="zcontent">
+        <h3><%= t ".my_favorite_song" %></h3>
+        <%= render "list_favorite_songs" %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource find_by: :slug
+  load_resource
 
   def index
     @search = User.search params[:q]
@@ -8,5 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @favorite_songs = @user.list_favorite_songs
+      .paginate page: params[:favorite_song_page]
   end
 end

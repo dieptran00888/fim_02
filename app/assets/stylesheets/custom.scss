@@ -1048,3 +1048,36 @@ h2 {
   text-indent: -10000px;
   width: 12px;
 }
+
+.wrap-2-col .sidebar .data-list>li.profile-row {
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-left: 0;
+  overflow: hidden;
+}
+
+.wrap-2-col .sidebar .data-list>li.profile-row a {
+  text-transform: none;
+  text-align: center;
+  padding: 0;
+  line-height: 1.6;
+  position: relative;
+  top: -3px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.panel.panel-default.favorite {
+  margin: 0;
+  .panel-body {
+    background: none;
+    padding: 0;
+  }
+}
+
+.audio-player.player-favorite {
+  padding: 0;
+}
+
+

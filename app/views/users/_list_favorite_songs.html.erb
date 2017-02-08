@@ -1,0 +1,20 @@
+<div class="panel panel-default favorite">
+  <a class="panel-body">
+    <div class="audio-player player-favorite">
+      <div class="">
+        <a class="glyphicon glyphicon-step-forward icon-next"></a>
+      </div>
+      <audio id="audio-player" src="<%= @favorite_songs.first.url_content %>"
+        type="audio/mp3" controls="controls"></audio>
+    </div>
+  </a>
+  <ul class="list-group">
+    <% @favorite_songs.each_with_index do |song, index| %>
+      <li class="list-group-item">
+        <span class="rank_song"><%= index+1 %></span>
+        <%= link_to song.name, song_path(song),
+          data: song.url_content %>
+      </li>
+    <% end %>
+  </ul>
+</div>

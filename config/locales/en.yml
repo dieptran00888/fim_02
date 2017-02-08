@@ -232,6 +232,8 @@ en:
       edit-profile: "Edit Profile"
       change-password: "Change Password"
       activity: "Activity"
+      my_favorite_song: "My Favorite Songs"
+      favorite: "Favorite"
     title: "Users"
   comments:
     form:
