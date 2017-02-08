@@ -1036,6 +1036,20 @@ h2 {
   float: right;
 }
 
-.show-suggest {
+.audio-player a {
+  top: 28px;
+  left: 95px;
+  z-index: 100001;
+}
 
+.title-album {
+  float: left;
+  padding-left: 50px;
+}
+
+.rank_song {
+  padding-right: 20px;
+  height: 30px;
+  text-indent: -10000px;
+  width: 12px;
 }

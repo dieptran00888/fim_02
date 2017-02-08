@@ -4,10 +4,11 @@ class AlbumsController < ApplicationController
 
   before_action :set_attributes, only: :create
   before_action :album_support, only: :show
+  before_action :load_albums, only: :show
 
   def index
-    @albums = Album.order_rate.paginate page: params[:page],
-      per_page: Settings.per_page
+    @search = Album.search params[:q]
+    @albums = @search.result
   end
 
   def new
@@ -36,5 +37,9 @@ class AlbumsController < ApplicationController
 
   def album_support
     @support = Supports::AlbumSupport.new @album
+  end
+
+  def load_albums
+    @albums = Album.all
   end
 end
